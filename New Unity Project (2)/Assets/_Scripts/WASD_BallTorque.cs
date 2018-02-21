@@ -11,29 +11,33 @@ public class WASD_BallTorque : MonoBehaviour {
 
 	// Use this for initialization
 	void Start () {
+		
+		// get the rigidbody
 		ballRB = this.GetComponent<Rigidbody> ();
 	}
 	
 	// Update is called once per frame
 	void FixedUpdate () {
+
+		// get player input, apply torque relative to the ball
 		if (Input.GetKey (KeyCode.W)) {
 		
-			Debug.Log("Forward Torque Added");
+			//Debug.Log("Forward Torque Added");
 			ballRB.AddTorque (Vector3.forward * forceAmount);
 		}
 
 		if (Input.GetKey (KeyCode.D)) {
-			Debug.Log("Right Torque Added");
+			//Debug.Log("Right Torque Added");
 			ballRB.AddTorque (Vector3.right * forceAmount);
 		}
 
 		if (Input.GetKey (KeyCode.S)) {
-			Debug.Log("Left Torque Added");
+			//Debug.Log("Left Torque Added");
 			ballRB.AddTorque (Vector3.forward * forceAmount * -1);
 		}
 		if (Input.GetKey (KeyCode.A)) {
-			Debug.Log("Backward Torque Added");
-			ballRB.AddTorque (Vector3.forward * forceAmount * -1);
+			//Debug.Log("Backward Torque Added");
+			ballRB.AddTorque (Vector3.right * forceAmount * -1);
 		}
 	}
 }
