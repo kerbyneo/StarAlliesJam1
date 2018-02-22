@@ -6,9 +6,12 @@ public class TowerController : MonoBehaviour {
 
 	private Rigidbody towerRB;
 	public float centerMassHeight;
+	[Header ("Works with all types of handicaps")]
 	public float forceHandicap;
-	[Header ("Only works with handicap type 2")]
+	[Header ("Only works with handicap type 2 & 3")]
 	public float velocityReduce;
+	[Header ("Only works with handicap type 3")]
+	public float WASDTorque;
 
 
 
@@ -54,17 +57,74 @@ public class TowerController : MonoBehaviour {
 		Debug.Log ("Handicap Force: " +  handicapVector);
 		*/
 
+
+
+
 		// TYPE 2: REDUCING THE VELOCITY OF THE TOWER WHEN IT IS IN THE RANGE OF VECTOR3.ZERO
-		// this one probably feels better, and could probably be combined with a drastic extra force on the pillar if the tower is really tipping
+		// this one kinda feels wierd
 
+		/*
+		if (this.transform.rotation.eulerAngles.magnitude < 20) {
 
-		if (this.transform.rotation.eulerAngles.magnitude < 10) {
+			towerRB.angularVelocity = towerRB.angularVelocity * velocityReduce;
+
+		
+		} else {
+		
 			Vector3 handicapVector = (sinVector (this.transform.rotation.eulerAngles) * forceHandicap * -1);
-			towerRB.velocity = towerRB.velocity * velocityReduce;
 			towerRB.AddTorque(handicapVector);
 		
 		}
 
+		*/
+
+
+
+		// TYPE 3: CUSTOM CONDITIIONALS TO MAKE THE PLAYERS PREDICTICED ACTIONS MORE EFFECTIVE
+		// this one probably odd, but better
+
+		// get player input, apply torque relative to the ball
+
+		/*
+
+		if (this.transform.rotation.eulerAngles.magnitude > 30 && towerRB.velocity.magnitude > 2) {
+
+			Debug.Log ("Applying handicap");
+			if (Input.GetKey (KeyCode.W)) {
+
+				//Debug.Log("Forward Torque Added");
+				towerRB.AddTorque (Vector3.forward * WASDTorque * -1);
+			}
+
+			if (Input.GetKey (KeyCode.D)) {
+				//Debug.Log("Right Torque Added");
+				towerRB.AddTorque (Vector3.right * WASDTorque * -1);
+			}
+
+			if (Input.GetKey (KeyCode.S)) {
+				//Debug.Log("Left Torque Added");
+				towerRB.AddTorque (Vector3.forward * WASDTorque);
+			}
+			if (Input.GetKey (KeyCode.A)) {
+				//Debug.Log("Backward Torque Added");
+				towerRB.AddTorque (Vector3.right * WASDTorque);
+			}
+		}
+
+		// TYPE 4: ADDING FORCE JUST UPWARD
+
+		if (this.transform.rotation.eulerAngles.magnitude < 10 && towerRB.angularVelocity.magnitude < 2) {
+			Debug.Log ("Applying small handicap");
+
+			towerRB.velocity = towerRB.velocity * velocityReduce;
+			Vector3 handicapVector = (sinVector (this.transform.rotation.eulerAngles) * forceHandicap * -1);
+		
+		}
+
+		*/
+
+
+		towerRB.AddForce (Vector3.up * forceHandicap);
 
 
 	}
