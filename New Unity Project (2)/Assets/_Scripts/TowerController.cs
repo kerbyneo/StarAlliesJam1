@@ -20,16 +20,44 @@ public class TowerController : MonoBehaviour {
 	}
 	
 	// Update is called once per frame
-	void Update () {
+	void FixedUpdate () {
 		
 		// draw a line to the center of mass
-		Debug.DrawLine (this.transform.localPosition, towerRB.worldCenterOfMass);
+		Debug.DrawLine (Vector3.zero, towerRB.worldCenterOfMass);
+
+
 
 
 		// force handicap, becuase I guess normal balancing is quite difficult
-		towerRB.AddTorque(this.transform.rotation.eulerAngles * -1 * forceHandicap);
+		Vector3 handicapVector = (signPreserveOP (this.transform.rotation.eulerAngles) * forceHandicap * -1);
 
-		Debug.DrawLine (this.transform.localPosition, this.transform.rotation.eulerAngles * -1 * forceHandicap);
+		towerRB.AddTorque(handicapVector);
+
+		Debug.DrawLine (Vector3.zero, handicapVector, Color.blue);
+		Debug.DrawLine (Vector3.zero, this.transform.rotation.eulerAngles, Color.red);
+
+
+		Debug.Log ("Euler Angles: " + this.transform.rotation.eulerAngles);
+
+		Debug.Log ("Handicap Force: " +  handicapVector);
 
 	}
+
+
+
+	// a sign preserving operation, uses a vector3
+	private Vector3 signPreserveOP (Vector3 vector) {
+		Vector3 newVector = Vector3.zero;
+
+		// iterates through the dimensions of the vector3
+		for (int i = 0; i < 3; i++) {
+
+			newVector [i] = Mathf.Sin (vector [i]);
+
+		}
+
+		return newVector;
+	}
+
 }
+
