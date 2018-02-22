@@ -31,6 +31,9 @@ public class TowerController : MonoBehaviour {
 		// force handicap, becuase I guess normal balancing is quite difficult
 		Vector3 handicapVector = (signPreserveOP (this.transform.rotation.eulerAngles) * forceHandicap * -1);
 
+
+
+
 		towerRB.AddTorque(handicapVector);
 
 		Debug.DrawLine (Vector3.zero, handicapVector, Color.blue);
