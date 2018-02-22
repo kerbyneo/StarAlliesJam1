@@ -111,8 +111,6 @@ public class TowerController : MonoBehaviour {
 			}
 		}
 
-		// TYPE 4: ADDING FORCE JUST UPWARD
-
 		if (this.transform.rotation.eulerAngles.magnitude < 10 && towerRB.angularVelocity.magnitude < 2) {
 			Debug.Log ("Applying small handicap");
 
@@ -123,6 +121,9 @@ public class TowerController : MonoBehaviour {
 
 		*/
 
+
+		// TYPE 4: ADDING FORCE JUST UPWARD
+		// decided to change the whole idea of the tower movement in general, so I guess this is what I am going with
 
 		towerRB.AddForce (Vector3.up * forceHandicap);
 
