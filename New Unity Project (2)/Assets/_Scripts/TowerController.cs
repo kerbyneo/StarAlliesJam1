@@ -7,6 +7,9 @@ public class TowerController : MonoBehaviour {
 	private Rigidbody towerRB;
 	public float centerMassHeight;
 	public float forceHandicap;
+	[Header ("Only works with handicap type 2")]
+	public float velocityReduce;
+
 
 
 	// Use this for initialization
@@ -28,8 +31,14 @@ public class TowerController : MonoBehaviour {
 
 
 
+		/* TYPES OF POSSIBLE HANDICAPPING FORCES */
+
+		// TYPE 1: APPLYING A TORQUE TOWARD VECTOR3.ZERO AT ALL TIMES WITH MATHF.SIN
+		// this one isn't that good, becuase it reduces the feel of gravity, and just seems janky in general
+
+		/*
 		// force handicap, becuase I guess normal balancing is quite difficult
-		Vector3 handicapVector = (signPreserveOP (this.transform.rotation.eulerAngles) * forceHandicap * -1);
+		Vector3 handicapVector = (sinVector (this.transform.rotation.eulerAngles) * forceHandicap * -1);
 
 
 
@@ -43,13 +52,27 @@ public class TowerController : MonoBehaviour {
 		Debug.Log ("Euler Angles: " + this.transform.rotation.eulerAngles);
 
 		Debug.Log ("Handicap Force: " +  handicapVector);
+		*/
+
+		// TYPE 2: REDUCING THE VELOCITY OF THE TOWER WHEN IT IS IN THE RANGE OF VECTOR3.ZERO
+		// this one probably feels better, and could probably be combined with a drastic extra force on the pillar if the tower is really tipping
+
+
+		if (this.transform.rotation.eulerAngles.magnitude < 10) {
+			Vector3 handicapVector = (sinVector (this.transform.rotation.eulerAngles) * forceHandicap * -1);
+			towerRB.velocity = towerRB.velocity * velocityReduce;
+			towerRB.AddTorque(handicapVector);
+		
+		}
+
+
 
 	}
 
 
 
 	// a sign preserving operation, uses a vector3
-	private Vector3 signPreserveOP (Vector3 vector) {
+	private Vector3 sinVector (Vector3 vector) {
 		Vector3 newVector = Vector3.zero;
 
 		// iterates through the dimensions of the vector3
