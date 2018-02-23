@@ -12,6 +12,8 @@ public class TowerController : MonoBehaviour {
 	public float velocityReduce;
 	[Header ("Only works with handicap type 3")]
 	public float WASDTorque;
+	[Header ("Only works with handicap type 5")]
+	public float ForceHeight;
 
 
 
@@ -29,8 +31,7 @@ public class TowerController : MonoBehaviour {
 	void FixedUpdate () {
 		
 		// draw a line to the center of mass
-		Debug.DrawLine (Vector3.zero, towerRB.worldCenterOfMass);
-
+		//Debug.DrawLine (Vector3.zero, towerRB.worldCenterOfMass);
 
 
 
@@ -125,8 +126,19 @@ public class TowerController : MonoBehaviour {
 		// TYPE 4: ADDING FORCE JUST UPWARD
 		// decided to change the whole idea of the tower movement in general, so I guess this is what I am going with
 
+
 		towerRB.AddForce (Vector3.up * forceHandicap);
 
+
+
+		// TYPE 5: FORCE FROM POINT
+		// who even knows these days
+
+		/*
+
+		towerRB.AddForceAtPosition(Vector3.up * forceHandicap,this.transform.position + new Vector3(0,ForceHeight,0));
+		Debug.DrawLine (transform.position+Vector3.up,transform.position);
+		*/
 
 	}
 
@@ -138,7 +150,7 @@ public class TowerController : MonoBehaviour {
 
 		// iterates through the dimensions of the vector3
 		for (int i = 0; i < 3; i++) {
-
+			
 			newVector [i] = Mathf.Sin (vector [i]);
 
 		}
