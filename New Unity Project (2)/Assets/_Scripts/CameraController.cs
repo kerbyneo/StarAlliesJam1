@@ -22,7 +22,8 @@ public class CameraController : MonoBehaviour {
 	void Start () {
 
 
-		towerGO = GameObject.Find ("Tower");
+		towerGO = GameObject.Find ("CanonTower_Modified");
+
 		cameraPositionOffset = this.transform.position - towerGO.transform.position;
 		startTime = Time.time;
 

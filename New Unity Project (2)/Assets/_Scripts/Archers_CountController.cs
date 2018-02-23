@@ -3,9 +3,10 @@ using System.Collections.Generic;
 using UnityEngine;
 using UnityEngine.UI;
 
-public class NewBehaviourScript : MonoBehaviour {
+public class Archers_CountController : MonoBehaviour {
 
 	private Text textF;
+	public int archerCount = 3;
 
 	// Use this for initialization
 	void Start () {
@@ -15,27 +16,6 @@ public class NewBehaviourScript : MonoBehaviour {
 	
 	// Update is called once per frame
 	void Update () {
-
-		int archerCount = 0;
-
-		if (!GameObject.Find ("Archer").GetComponent<ArcherController> ().touchedGround) {
-		
-			archerCount++;
-
-		}
-
-		if (GameObject.Find ("Archer (1)").GetComponent<ArcherController> ().touchedGround) {
-
-			archerCount++;
-
-		}
-
-		if (GameObject.Find ("Archer (2)").GetComponent<ArcherController> ().touchedGround) {
-
-			archerCount++;
-
-
-		}
 
 
 		textF.text = archerCount.ToString ();
