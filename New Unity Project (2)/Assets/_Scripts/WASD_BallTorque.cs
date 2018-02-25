@@ -8,7 +8,6 @@ public class WASD_BallTorque : MonoBehaviour {
 	private Rigidbody ballRB;
 	public float forceAmount = 1f;
 
-
 	// Use this for initialization
 	void Start () {
 		
