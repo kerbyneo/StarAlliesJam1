@@ -21,7 +21,7 @@ public class ArcherController : MonoBehaviour {
 
 
 
-		Debug.Log (collision.gameObject.transform.root.gameObject.name.ToString());
+		//Debug.Log (collision.gameObject.transform.root.gameObject.name.ToString());
 		if (collision.gameObject.transform.root.gameObject.name == "World") {
 		
 			countController.archerCount--;

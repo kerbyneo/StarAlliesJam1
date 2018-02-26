@@ -2,7 +2,7 @@
 using System.Collections.Generic;
 using UnityEngine;
 
-public class Jump_Ball : MonoBehaviour {
+public class BallController : MonoBehaviour {
     private Rigidbody ballRB;
     private bool onGround;
     private Vector3 jump;
