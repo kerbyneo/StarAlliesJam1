@@ -6,7 +6,6 @@ public class ArcherController : MonoBehaviour {
 
 	private bool touchedGround = false;
 	private Archers_CountController countController;
-	public GameObject towerTop;
 
 	void Start() {
 	
@@ -14,15 +13,16 @@ public class ArcherController : MonoBehaviour {
 	}
 	
 	// check if touched something under world
-	void Update() {
+	void OnCollisionEnter(Collision collision) {
 
 		if (this.touchedGround) {
 			return;
 		}
 
 
+
 		//Debug.Log (collision.gameObject.transform.root.gameObject.name.ToString());
-		if ((towerTop.transform.position - this.transform.position).magnitude > 4) {
+		if (collision.gameObject.transform.root.gameObject.name == "World") {
 		
 			countController.archerCount--;
 			this.touchedGround = true;

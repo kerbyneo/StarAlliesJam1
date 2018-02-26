@@ -11,7 +11,6 @@ public class CameraController : MonoBehaviour {
 	[Header ("Time to reach, larger is longer")]
 	public float cameraSpeed = 1;
 
-
 	private Vector3 cameraPositionOffset;
 
 
