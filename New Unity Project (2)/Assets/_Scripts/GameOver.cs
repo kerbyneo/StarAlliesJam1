@@ -4,14 +4,12 @@ using UnityEngine;
 using UnityEngine.UI;
 
 public class GameOver : MonoBehaviour {
-    private Rigidbody ballRB;
     public Text gameOverText;
     public GameObject archers;
     public Archers_CountController archerScript;
 
 	// Use this for initialization
 	void Start () {
-        ballRB = this.GetComponent<Rigidbody>();
         archers = GameObject.Find("Archers_Count");
         archerScript = archers.GetComponent<Archers_CountController>(); //accessing script
     }

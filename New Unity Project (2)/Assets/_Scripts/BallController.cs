@@ -36,7 +36,7 @@ public class BallController : MonoBehaviour {
 		// We need to tag all objects that are the floor to be floor, becuase if we use the root name trick, then we can climb up walls
 		if(collision.gameObject.tag == "Floor")
         {
-			Debug.Log("Collision: " + collision.relativeVelocity.y);
+			//Debug.Log("Collision: " + collision.relativeVelocity.y);
 
 
 			onGround = true;
