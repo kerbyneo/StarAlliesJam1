@@ -938,7 +938,7 @@ GameObject:
   - component: {fileID: 1063422551}
   m_Layer: 0
   m_Name: Cube
-  m_TagString: Untagged
+  m_TagString: Floor
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 4294967295
@@ -2230,7 +2230,7 @@ GameObject:
   - component: {fileID: 1602238859}
   m_Layer: 0
   m_Name: World
-  m_TagString: Untagged
+  m_TagString: Floor
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
@@ -2368,7 +2368,7 @@ Mesh:
   m_ObjectHideFlags: 0
   m_PrefabParentObject: {fileID: 0}
   m_PrefabInternal: {fileID: 0}
-  m_Name: pb_Mesh11694
+  m_Name: pb_Mesh11706
   serializedVersion: 8
   m_SubMeshes:
   - serializedVersion: 2
