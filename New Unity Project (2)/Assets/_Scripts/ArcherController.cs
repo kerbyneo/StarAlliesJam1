@@ -22,7 +22,7 @@ public class ArcherController : MonoBehaviour {
 
 
 		//Debug.Log (collision.gameObject.transform.root.gameObject.name.ToString());
-		if ((towerTop.transform.position - this.transform.position).magnitude > 2) {
+		if ((towerTop.transform.position - this.transform.position).magnitude > 1.8) {
 		
 			countController.archerCount--;
 			this.touchedGround = true;

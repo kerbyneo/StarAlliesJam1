@@ -521,6 +521,7 @@ GameObject:
   - component: {fileID: 510632591}
   - component: {fileID: 510632590}
   - component: {fileID: 510632589}
+  - component: {fileID: 510632592}
   m_Layer: 0
   m_Name: Water
   m_TagString: Water
@@ -596,6 +597,18 @@ MeshFilter:
   m_PrefabInternal: {fileID: 0}
   m_GameObject: {fileID: 510632587}
   m_Mesh: {fileID: 10209, guid: 0000000000000000e000000000000000, type: 0}
+--- !u!114 &510632592
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_PrefabParentObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 0}
+  m_GameObject: {fileID: 510632587}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: f1c8f272e2cce4cfda5862bd5fb8add5, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  followObject: {fileID: 0}
 --- !u!1 &550254383
 GameObject:
   m_ObjectHideFlags: 0
@@ -884,6 +897,56 @@ Prefab:
       propertyPath: m_ConnectedBody
       value: 
       objectReference: {fileID: 1972258689}
+    - target: {fileID: 136078028790596256, guid: c89a923a3c1ee4c3aa2a8a35166e0e3a,
+        type: 2}
+      propertyPath: m_Radius
+      value: 0.44
+      objectReference: {fileID: 0}
+    - target: {fileID: 114320048318858632, guid: c89a923a3c1ee4c3aa2a8a35166e0e3a,
+        type: 2}
+      propertyPath: forceHandicap
+      value: 130
+      objectReference: {fileID: 0}
+    - target: {fileID: 136183990098477762, guid: c89a923a3c1ee4c3aa2a8a35166e0e3a,
+        type: 2}
+      propertyPath: m_Radius
+      value: 0.08
+      objectReference: {fileID: 0}
+    - target: {fileID: 136469676800939628, guid: c89a923a3c1ee4c3aa2a8a35166e0e3a,
+        type: 2}
+      propertyPath: m_Radius
+      value: 0.08
+      objectReference: {fileID: 0}
+    - target: {fileID: 136905826339839730, guid: c89a923a3c1ee4c3aa2a8a35166e0e3a,
+        type: 2}
+      propertyPath: m_Radius
+      value: 0.08
+      objectReference: {fileID: 0}
+    - target: {fileID: 136252160812910550, guid: c89a923a3c1ee4c3aa2a8a35166e0e3a,
+        type: 2}
+      propertyPath: m_Radius
+      value: 0.08
+      objectReference: {fileID: 0}
+    - target: {fileID: 136444646680133378, guid: c89a923a3c1ee4c3aa2a8a35166e0e3a,
+        type: 2}
+      propertyPath: m_Radius
+      value: 0.08
+      objectReference: {fileID: 0}
+    - target: {fileID: 136126786005009850, guid: c89a923a3c1ee4c3aa2a8a35166e0e3a,
+        type: 2}
+      propertyPath: m_Radius
+      value: 0.08
+      objectReference: {fileID: 0}
+    - target: {fileID: 136633708038914750, guid: c89a923a3c1ee4c3aa2a8a35166e0e3a,
+        type: 2}
+      propertyPath: m_Radius
+      value: 0.08
+      objectReference: {fileID: 0}
+    - target: {fileID: 136637733447074318, guid: c89a923a3c1ee4c3aa2a8a35166e0e3a,
+        type: 2}
+      propertyPath: m_Radius
+      value: 0.08
+      objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_ParentPrefab: {fileID: 100100000, guid: c89a923a3c1ee4c3aa2a8a35166e0e3a, type: 2}
   m_IsPrefabParent: 0
@@ -2128,7 +2191,7 @@ Transform:
   m_PrefabInternal: {fileID: 0}
   m_GameObject: {fileID: 1577397444}
   m_LocalRotation: {x: -0, y: -0.9906171, z: 0, w: -0.13666655}
-  m_LocalPosition: {x: 0.088, y: 2.8460002, z: 0.202}
+  m_LocalPosition: {x: 0.042, y: 2.8460002, z: 0.219}
   m_LocalScale: {x: 0.07000003, y: 0.12, z: 0.07000003}
   m_Children:
   - {fileID: 1852410901}
@@ -3030,6 +3093,8 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   jumpForce: 60
+  additionalGravity: 40
+  minimumVelocityShake: 0.5
   magnitude: 5.07
   roughness: 0.76
   fadeInTime: 0
@@ -3077,7 +3142,7 @@ Transform:
   m_PrefabInternal: {fileID: 0}
   m_GameObject: {fileID: 1975698180}
   m_LocalRotation: {x: 0, y: -0.5735764, z: 0, w: 0.8191521}
-  m_LocalPosition: {x: 0.118, y: 2.8460002, z: -0.149}
+  m_LocalPosition: {x: 0.097, y: 2.8460002, z: -0.209}
   m_LocalScale: {x: 0.07, y: 0.12, z: 0.07}
   m_Children:
   - {fileID: 1474948290}

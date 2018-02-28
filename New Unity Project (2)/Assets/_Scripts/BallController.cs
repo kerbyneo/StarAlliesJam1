@@ -10,6 +10,12 @@ public class BallController : MonoBehaviour {
     public float jumpForce = 1.0f;
 	private bool firstCollision = true;
 
+	[Header ("Additional Gravity to Make up for Upward Force on Tower")]
+	public float additionalGravity = 3f;
+
+	[Header ("Minimum Velocity To Camera Shake")]
+	public float minimumVelocityShake = 2f;
+
 	[Header ("Jump Camera Shake Amounts")]
 	public float magnitude = 1f;
 	public float roughness = 1f;
@@ -32,7 +38,11 @@ public class BallController : MonoBehaviour {
 
 			onGround = true;
 			if (!firstCollision) {
-				CameraShaker.Instance.ShakeOnce (magnitude, roughness, fadeInTime, fadeOutTime);
+
+				if (ballRB.velocity.magnitude > minimumVelocityShake) {
+					CameraShaker.Instance.ShakeOnce (magnitude, roughness, fadeInTime, fadeOutTime);
+				}
+			
 			} else {
 				firstCollision = false;
 			}
@@ -57,5 +67,7 @@ public class BallController : MonoBehaviour {
            	//Debug.Log("Jump!");
 			ballRB.AddForce(jumpForce * Vector3.up, ForceMode.Impulse);
         }
+
+		ballRB.AddForce (Vector3.down * additionalGravity);
 	}
 }
