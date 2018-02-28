@@ -4,6 +4,11 @@ using UnityEngine;
 
 public class WaterController : MonoBehaviour {
 
+
+	// NOT USED AS CAUSES SEA_SICKNESS
+
+
+	/*
 	public GameObject followObject;
 
 	private Vector3 objectOffset;
@@ -23,4 +28,6 @@ public class WaterController : MonoBehaviour {
 			objectOffset.z + followObject.transform.position.z);
 
 	}
+
+	*/
 }

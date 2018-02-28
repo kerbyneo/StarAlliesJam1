@@ -16,6 +16,9 @@ public class BallController : MonoBehaviour {
 	[Header ("Minimum Velocity To Camera Shake")]
 	public float minimumVelocityShake = 2f;
 
+	[Header ("Maximum Velocity Shake Input")]
+	public float maximumVelocityShake = 2f;
+
 	[Header ("Jump Camera Shake Amounts")]
 	public float magnitude = 1f;
 	public float roughness = 1f;
@@ -30,17 +33,18 @@ public class BallController : MonoBehaviour {
 
     void OnCollisionEnter(Collision collision) //as long as colliding w obj, not working for now
     {
-
 		// We need to tag all objects that are the floor to be floor, becuase if we use the root name trick, then we can climb up walls
 		if(collision.gameObject.tag == "Floor")
         {
-			//Debug.Log("Collision");
+			Debug.Log("Collision: " + collision.relativeVelocity.y);
+
 
 			onGround = true;
 			if (!firstCollision) {
 
-				if (ballRB.velocity.magnitude > minimumVelocityShake) {
-					CameraShaker.Instance.ShakeOnce (magnitude, roughness, fadeInTime, fadeOutTime);
+				// using relative velocity, otherwise velocity would be zero, I guess
+				if (collision.relativeVelocity.y > minimumVelocityShake) {
+					CameraShaker.Instance.ShakeOnce (Mathf.Abs((collision.relativeVelocity.y > maximumVelocityShake? maximumVelocityShake:collision.relativeVelocity.y) * magnitude), roughness, fadeInTime, fadeOutTime);
 				}
 			
 			} else {
@@ -62,11 +66,11 @@ public class BallController : MonoBehaviour {
 	
 	// Update is called once per frame
 	void FixedUpdate () {
-		if(Input.GetKeyDown(KeyCode.Space) && onGround)
-        {
-           	//Debug.Log("Jump!");
-			ballRB.AddForce(jumpForce * Vector3.up, ForceMode.Impulse);
-        }
+		if (Input.GetKeyDown (KeyCode.Space) && onGround) {
+			//Debug.Log("Jump!");
+			ballRB.AddForce (jumpForce * Vector3.up, ForceMode.Impulse);
+		}
+
 
 		ballRB.AddForce (Vector3.down * additionalGravity);
 	}
