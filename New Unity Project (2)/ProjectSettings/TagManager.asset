@@ -6,6 +6,7 @@ TagManager:
   tags:
   - Floor
   - Water
+  - End
   layers:
   - Default
   - TransparentFX
