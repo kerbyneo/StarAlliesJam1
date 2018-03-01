@@ -54,21 +54,13 @@ public class BallController : MonoBehaviour {
         }
     }
 		
-	void OnCollisionExit(Collision collision) {
-
-		if (collision.gameObject.tag == "Floor") {
-			//Debug.Log("Collision");
-
-			onGround = false;
-		}
-	}
-		
 	
 	// Update is called once per frame
 	void FixedUpdate () {
 		if (Input.GetKeyDown (KeyCode.Space) && onGround) {
 			//Debug.Log("Jump!");
 			ballRB.AddForce (jumpForce * Vector3.up, ForceMode.Impulse);
+			onGround = false;
 		}
 
 
