@@ -20,7 +20,7 @@ MonoBehaviour:
   m_ShowMode: 4
   m_Title: 
   m_RootView: {fileID: 4}
-  m_MinSize: {x: 950, y: 521}
+  m_MinSize: {x: 950, y: 300}
   m_MaxSize: {x: 10000, y: 10000}
 --- !u!114 &2
 MonoBehaviour:
@@ -40,8 +40,8 @@ MonoBehaviour:
     y: 0
     width: 652
     height: 271
-  m_MinSize: {x: 204, y: 221}
-  m_MaxSize: {x: 4004, y: 4021}
+  m_MinSize: {x: 200, y: 200}
+  m_MaxSize: {x: 4000, y: 4000}
   m_ActualView: {fileID: 14}
   m_Panes:
   - {fileID: 14}
@@ -70,7 +70,7 @@ MonoBehaviour:
   m_MinSize: {x: 204, y: 442}
   m_MaxSize: {x: 4004, y: 8042}
   vertical: 1
-  controlID: 110
+  controlID: 113
 --- !u!114 &4
 MonoBehaviour:
   m_ObjectHideFlags: 52
@@ -156,10 +156,10 @@ MonoBehaviour:
     y: 30
     width: 1440
     height: 800
-  m_MinSize: {x: 713, y: 471}
-  m_MaxSize: {x: 18008, y: 14021}
+  m_MinSize: {x: 713, y: 492}
+  m_MaxSize: {x: 18008, y: 14042}
   vertical: 0
-  controlID: 26
+  controlID: 112
 --- !u!114 &8
 MonoBehaviour:
   m_ObjectHideFlags: 52
@@ -180,8 +180,8 @@ MonoBehaviour:
     y: 0
     width: 493
     height: 800
-  m_MinSize: {x: 232, y: 471}
-  m_MaxSize: {x: 10002, y: 14021}
+  m_MinSize: {x: 232, y: 492}
+  m_MaxSize: {x: 10002, y: 14042}
   vertical: 1
   controlID: 27
 --- !u!114 &9
@@ -202,8 +202,8 @@ MonoBehaviour:
     y: 0
     width: 493
     height: 379
-  m_MinSize: {x: 200, y: 200}
-  m_MaxSize: {x: 4000, y: 4000}
+  m_MinSize: {x: 202, y: 221}
+  m_MaxSize: {x: 4002, y: 4021}
   m_ActualView: {fileID: 15}
   m_Panes:
   - {fileID: 15}
@@ -253,8 +253,8 @@ MonoBehaviour:
     y: 271
     width: 652
     height: 529
-  m_MinSize: {x: 204, y: 221}
-  m_MaxSize: {x: 4004, y: 4021}
+  m_MinSize: {x: 200, y: 200}
+  m_MaxSize: {x: 4000, y: 4000}
   m_ActualView: {fileID: 18}
   m_Panes:
   - {fileID: 18}
@@ -316,8 +316,7 @@ MonoBehaviour:
   m_PersistentViewDataDictionary: {fileID: 0}
   dragSelectMode: 2
   drawNormals: 0
-  selection:
-  - {fileID: 0}
+  selection: []
 --- !u!114 &14
 MonoBehaviour:
   m_ObjectHideFlags: 52
@@ -423,24 +422,24 @@ MonoBehaviour:
     height: 358
   m_PersistentViewDataDictionary: {fileID: 0}
   m_TreeViewState:
-    scrollPos: {x: 0, y: 139}
-    m_SelectedIDs: 
-    m_LastClickedID: 0
-    m_ExpandedIDs: e6f9ffff9cfbffff9efbffff00000000da2e0000fc2e0000
+    scrollPos: {x: 0, y: 0}
+    m_SelectedIDs: e02e0000
+    m_LastClickedID: 12000
+    m_ExpandedIDs: 02faffff9efbffff00000000fa2d00000a2e0000
     m_RenameOverlay:
       m_UserAcceptedRename: 0
-      m_Name: CheckPointWalkway (1)
-      m_OriginalName: CheckPointWalkway (1)
+      m_Name: 
+      m_OriginalName: 
       m_EditFieldRect:
         serializedVersion: 2
         x: 0
         y: 0
         width: 0
         height: 0
-      m_UserData: -1114238
+      m_UserData: 0
       m_IsWaitingForDelay: 0
       m_IsRenaming: 0
-      m_OriginalEventType: 0
+      m_OriginalEventType: 11
       m_IsRenamingFilename: 0
       m_ClientGUIView: {fileID: 9}
     m_SearchString: 
@@ -488,7 +487,7 @@ MonoBehaviour:
     m_ShowAllHits: 0
     m_SearchArea: 0
     m_Folders:
-    - Assets/Models/CheckPointWalkway
+    - Assets/Models/flag
   m_ViewMode: 0
   m_StartGridSize: 64
   m_LastFolders: []
@@ -500,7 +499,7 @@ MonoBehaviour:
     scrollPos: {x: 0, y: 0}
     m_SelectedIDs: 70270000
     m_LastClickedID: 10096
-    m_ExpandedIDs: 000000005e2800007a2800009c280000ae280000ec280000f8280000fe28000012290000162900002e29000080290000b2290000d2290000e6290000fe2900006a2a00009c2a0000a02a0000422b0000a62b0000c02b0000dc2b0000ee2b00001a2c0000242c0000462c0000c02c0000c62c0000f22c0000742d000096310000983100009a3100009c3100009e310000a0310000a2310000a4310000a6310000a8310000aa310000
+    m_ExpandedIDs: 000000005e2800007a2800009c280000ae280000b8280000ee280000fa2800000029000014290000182900003029000082290000b4290000d4290000e8290000002a00006c2a00009e2a0000a22a0000ee2a00005a2b0000d82b0000f42b0000062c0000322c00003c2c00005e2c0000d82c0000de2c00000a2d00008c2d0000d8310000da310000dc310000de310000e0310000e2310000e4310000e6310000e8310000ea310000ec310000
     m_RenameOverlay:
       m_UserAcceptedRename: 0
       m_Name: 
@@ -525,26 +524,26 @@ MonoBehaviour:
       m_Icon: {fileID: 0}
       m_ResourceFile: 
   m_AssetTreeState:
-    scrollPos: {x: 0, y: 188.0003}
+    scrollPos: {x: 0, y: 292}
     m_SelectedIDs: 
     m_LastClickedID: 0
-    m_ExpandedIDs: 220fefff000000005e2800007a2800009c280000ae280000ec280000f8280000fe28000012290000162900002e29000080290000b2290000d2290000e6290000fe2900006a2a00009c2a0000a02a0000422b0000c02b0000dc2b0000ee2b00001a2c0000242c0000462c0000c02c0000c62c0000f22c0000742d000096310000983100009a3100009c3100009e310000a0310000a2310000a4310000a6310000a8310000aa31000016b30000
+    m_ExpandedIDs: 000000005e2800007a2800009c280000ae280000b8280000ee280000fa2800000029000014290000182900003029000082290000b4290000d4290000e8290000002a00006c2a00009e2a0000a22a0000ee2a00005a2b0000be2b0000d82b0000f42b0000062c0000322c0000582c00005e2c0000d82c0000de2c00000a2d00008c2d0000d8310000da310000dc310000de310000e0310000e2310000e4310000e6310000e8310000ea310000ec310000
     m_RenameOverlay:
       m_UserAcceptedRename: 0
-      m_Name: 
-      m_OriginalName: 
+      m_Name: CheckPointWalkway
+      m_OriginalName: CheckPointWalkway
       m_EditFieldRect:
         serializedVersion: 2
         x: 0
         y: 0
         width: 0
         height: 0
-      m_UserData: 0
+      m_UserData: 10990
       m_IsWaitingForDelay: 0
       m_IsRenaming: 0
-      m_OriginalEventType: 11
+      m_OriginalEventType: 0
       m_IsRenamingFilename: 1
-      m_ClientGUIView: {fileID: 0}
+      m_ClientGUIView: {fileID: 10}
     m_SearchString: 
     m_CreateAssetUtility:
       m_EndAction: {fileID: 0}
@@ -638,14 +637,14 @@ MonoBehaviour:
     height: 508
   m_PersistentViewDataDictionary: {fileID: 0}
   m_SceneLighting: 1
-  lastFramingTime: 757.1159970760345
+  lastFramingTime: 982.9909650087357
   m_2DMode: 0
   m_isRotationLocked: 0
   m_AudioPlay: 0
   m_Position:
-    m_Target: {x: -5.721494, y: 8.261502, z: -13.987595}
+    m_Target: {x: -162.68558, y: -100.722404, z: 1.1708292}
     speed: 2
-    m_Value: {x: -5.721494, y: 8.261502, z: -13.987595}
+    m_Value: {x: -162.68558, y: -100.722404, z: 1.1708292}
   m_RenderMode: 0
   m_ValidateTrueMetals: 0
   m_SceneViewState:
@@ -669,13 +668,13 @@ MonoBehaviour:
       speed: 2
       m_Value: 0
   m_Rotation:
-    m_Target: {x: 0.17787361, y: 0.008760021, z: -0.0015847399, w: 0.9840131}
+    m_Target: {x: -0.20285381, y: 0.6750345, z: -0.20131719, w: -0.6801839}
     speed: 2
-    m_Value: {x: 0.17787361, y: 0.008760021, z: -0.0015847399, w: 0.9840131}
+    m_Value: {x: -0.20285381, y: 0.6750345, z: -0.20131719, w: -0.6801839}
   m_Size:
-    m_Target: 3.656539
+    m_Target: 196.53351
     speed: 2
-    m_Value: 3.656539
+    m_Value: 196.53351
   m_Ortho:
     m_Target: 0
     speed: 2
