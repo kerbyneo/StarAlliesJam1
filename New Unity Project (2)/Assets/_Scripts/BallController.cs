@@ -91,7 +91,7 @@ public class BallController : MonoBehaviour {
 			if (timer < 0) {
 			
 				timer = respawnWait;
-				RespawnAll ();
+				//RespawnAll ();
 			}
 		}
 	}

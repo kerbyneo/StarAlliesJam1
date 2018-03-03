@@ -11,12 +11,12 @@ public class VoidController : MonoBehaviour {
 	
 	void OnTriggerEnter(Collider trigger) {
 
-		if (trigger.gameObject == ballOb) {
+	if (trigger.gameObject == ballOb) {
 		
-			ballOb.GetComponent<BallController> ().RespawnAll ();
+		ballOb.GetComponent<BallController> ().RespawnAll ();
 		
 		
-		}
+	}
 
 
 	}
