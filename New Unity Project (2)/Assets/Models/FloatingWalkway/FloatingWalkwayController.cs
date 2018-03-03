@@ -4,13 +4,22 @@ using UnityEngine;
 
 public class FloatingWalkwayController : MonoBehaviour {
 
+	private Rigidbody platformRB;
+
 	// Use this for initialization
 	void Start () {
-		
+
+		platformRB = this.GetComponent<Rigidbody> ();
+
 	}
 	
 	// Update is called once per frame
-	void Update () {
-		
+	void FixedUpdate () {
+
+		//platformRB.AddTorque(
+
+
+
+
 	}
 }
