@@ -143,7 +143,6 @@ public class TowerController : MonoBehaviour {
 	}
 
 
-
 	// a sign preserving operation, uses a vector3
 	private Vector3 sinVector (Vector3 vector) {
 		Vector3 newVector = Vector3.zero;

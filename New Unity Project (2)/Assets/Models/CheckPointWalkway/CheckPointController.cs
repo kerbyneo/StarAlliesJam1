@@ -21,7 +21,7 @@ public class CheckPointController : MonoBehaviour {
 
 	BallController ballController;
 
-	private Vector3 CheckpointOffset = new Vector3(0,1,0);
+	private Vector3 CheckpointOffset = new Vector3(-2.5f,1,0);
 
 
 	// Use this for initialization
@@ -36,24 +36,24 @@ public class CheckPointController : MonoBehaviour {
 	}
 
 
-	void OnCollisionEnter(Collision collision) {
-
-		Debug.Log ("Collided");
+	void OnTriggerEnter(Collider trigger) {
 
 		if (playerReached) {
 			return;
 		}
 
-
-		if (collision.gameObject.name == "Sphere") {
+		if (trigger.gameObject.name == "Sphere") {
 		
 			playerReached = true;
 			
 			ballController.spawnPos = this.transform.position + CheckpointOffset;
+
+			//Debug.Log ("Spawn set: " + ballController.spawnPos);
 		
 			flag1.GetComponent <Renderer>().material = capturedFlag;
 			flag2.GetComponent <Renderer>().material = capturedFlag;
 		}
 	}
+		
 
 }

@@ -4,17 +4,23 @@ using UnityEngine;
 
 public class ArcherController : MonoBehaviour {
 
+	private Vector3 initialLocation;
 	private bool touchedGround = false;
 	private Archers_CountController countController;
 	public GameObject towerTop;
 
 	void Start() {
 	
+		initialLocation = this.transform.position - towerTop.transform.position;
+
 		countController = GameObject.Find ("Archers_Count").GetComponent<Archers_CountController> ();
 	}
 	
 	// check if touched something under world
 	void Update() {
+
+
+
 
 		if (this.touchedGround) {
 			return;
@@ -29,4 +35,22 @@ public class ArcherController : MonoBehaviour {
 		
 		}
 	}
+
+	public void Respawn() {
+	
+		this.GetComponent<Rigidbody> ().velocity = Vector3.zero;
+		this.GetComponent<Rigidbody> ().angularVelocity = Vector3.zero;
+
+
+		this.transform.position = initialLocation + towerTop.transform.position;
+		this.transform.rotation = Quaternion.identity;
+
+
+
+		this.touchedGround = false;
+	
+	
+	}
+
+
 }

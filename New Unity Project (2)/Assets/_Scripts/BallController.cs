@@ -6,9 +6,13 @@ using EZCameraShake;
 public class BallController : MonoBehaviour {
     
 	private Rigidbody ballRB;
+	public GameObject tower;
     private bool onGround;
     public float jumpForce = 1.0f;
 	private bool firstCollision = true;
+
+	public float respawnWait = 1.2f;
+	private float timer = 0;
 
 	[Header ("Additional Gravity to Make up for Upward Force on Tower")]
 	public float additionalGravity = 3f;
@@ -27,11 +31,20 @@ public class BallController : MonoBehaviour {
 
 	public Vector3 spawnPos;
 
+	[Header ("Archers")]
+	public GameObject archer1;
+	public GameObject archer2;
+	public GameObject archer3;
+	public GameObject archerCounter;
+
+
 
     // Use this for initialization
     void Start ()
     {
+		timer = respawnWait;
         ballRB = this.GetComponent<Rigidbody>(); //gets rigidbody
+		spawnPos = this.transform.position;
 	}
 
     void OnCollisionEnter(Collision collision) //as long as colliding w obj, not working for now
@@ -68,5 +81,50 @@ public class BallController : MonoBehaviour {
 
 
 		ballRB.AddForce (Vector3.down * additionalGravity);
+
+
+		if (archerCounter.GetComponent<Archers_CountController> ().archerCount == 0) {
+			
+			timer -= Time.deltaTime;
+
+
+			if (timer < 0) {
+			
+				timer = respawnWait;
+				RespawnAll ();
+			}
+		}
+	}
+
+
+
+	public void RespawnAll() {
+	
+
+		timer = respawnWait;
+
+		ballRB.velocity = Vector3.zero;
+		ballRB.angularVelocity = Vector3.zero;
+
+
+		tower.GetComponent<Rigidbody> ().velocity = Vector3.zero;
+		tower.GetComponent<Rigidbody> ().angularVelocity = Vector3.zero;
+
+
+
+		this.transform.position = spawnPos;
+		this.transform.rotation = Quaternion.identity;
+
+		tower.transform.position = spawnPos;
+		tower.transform.rotation = Quaternion.identity;
+
+
+
+
+		archer1.GetComponent<ArcherController> ().Respawn ();
+		archer2.GetComponent<ArcherController> ().Respawn ();
+		archer3.GetComponent<ArcherController> ().Respawn ();
+		archerCounter.GetComponent<Archers_CountController> ().Respawn ();
+	
 	}
 }

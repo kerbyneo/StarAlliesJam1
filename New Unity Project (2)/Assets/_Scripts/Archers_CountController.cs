@@ -21,4 +21,10 @@ public class Archers_CountController : MonoBehaviour {
 		textF.text = archerCount.ToString ();
 
 	}
+
+	public void Respawn() {
+	
+		archerCount = 3;
+	
+	}
 }

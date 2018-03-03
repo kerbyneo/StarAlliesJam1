@@ -4,6 +4,9 @@ using UnityEngine;
 using UnityEngine.UI;
 
 public class GameOver : MonoBehaviour {
+
+	/*
+
     public Text gameOverText;
     public GameObject archers;
     public Archers_CountController archerScript;
@@ -30,4 +33,6 @@ public class GameOver : MonoBehaviour {
             gameOverText.text = "Game Over";
         }
 	}
+
+	*/
 }
