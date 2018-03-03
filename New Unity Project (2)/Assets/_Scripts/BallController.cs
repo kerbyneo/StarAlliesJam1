@@ -14,6 +14,8 @@ public class BallController : MonoBehaviour {
 	public float respawnWait = 1.2f;
 	private float timer = 0;
 
+	public GameObject overrideSpawn;
+
 	[Header ("Additional Gravity to Make up for Upward Force on Tower")]
 	public float additionalGravity = 3f;
 
@@ -45,6 +47,15 @@ public class BallController : MonoBehaviour {
 		timer = respawnWait;
         ballRB = this.GetComponent<Rigidbody>(); //gets rigidbody
 		spawnPos = this.transform.position;
+
+
+		if (overrideSpawn != null)  {
+
+			Debug.Log ("spawn overridden");
+
+			overrideSpawn.GetComponent<CheckPointController> ().capturePoint();
+			this.RespawnAll ();
+		}
 	}
 
     void OnCollisionEnter(Collision collision) //as long as colliding w obj, not working for now
@@ -52,6 +63,8 @@ public class BallController : MonoBehaviour {
 		// We need to tag all objects that are the floor to be floor, becuase if we use the root name trick, then we can climb up walls
 		if(collision.gameObject.tag == "Floor")
         {
+
+
 			//Debug.Log("Collision: " + collision.relativeVelocity.y);
 
 

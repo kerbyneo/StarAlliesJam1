@@ -44,15 +44,22 @@ public class CheckPointController : MonoBehaviour {
 
 		if (trigger.gameObject.name == "Sphere") {
 		
-			playerReached = true;
-			
-			ballController.spawnPos = this.transform.position + CheckpointOffset;
+			this.capturePoint ();
 
-			//Debug.Log ("Spawn set: " + ballController.spawnPos);
-		
-			flag1.GetComponent <Renderer>().material = capturedFlag;
-			flag2.GetComponent <Renderer>().material = capturedFlag;
 		}
+	}
+
+	public void capturePoint() {
+	
+		playerReached = true;
+
+		ballController.spawnPos = this.transform.position + CheckpointOffset;
+
+		//Debug.Log ("Spawn set: " + ballController.spawnPos);
+
+		flag1.GetComponent <Renderer>().material = capturedFlag;
+		flag2.GetComponent <Renderer>().material = capturedFlag;
+	
 	}
 		
 
