@@ -38,6 +38,8 @@ public class CheckPointController : MonoBehaviour {
 
 	void OnCollisionEnter(Collision collision) {
 
+		Debug.Log ("Collided");
+
 		if (playerReached) {
 			return;
 		}
