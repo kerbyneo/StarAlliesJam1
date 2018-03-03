@@ -25,6 +25,9 @@ public class BallController : MonoBehaviour {
 	public float fadeInTime = .1f;
 	public float fadeOutTime = 1f;
 
+	public Vector3 spawnPos;
+
+
     // Use this for initialization
     void Start ()
     {
