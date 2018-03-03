@@ -54,7 +54,7 @@ public class BallController : MonoBehaviour {
         }
     }
 		
-	Check
+	
 	// Update is called once per frame
 	void FixedUpdate () {
 		if (Input.GetKeyDown (KeyCode.Space) && onGround) {
