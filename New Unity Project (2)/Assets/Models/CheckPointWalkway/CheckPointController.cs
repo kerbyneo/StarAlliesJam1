@@ -25,7 +25,7 @@ public class CheckPointController : MonoBehaviour {
 
 
 	// Use this for initialization
-	void Start () {
+	void Awake () {
 
 
 		flag1.GetComponent <Renderer>().material = uncapturedFlag;
