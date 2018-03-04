@@ -59,7 +59,7 @@ public class BallController : MonoBehaviour {
     void OnCollisionEnter(Collision collision) //as long as colliding w obj, not working for now
     {
 		// We need to tag all objects that are the floor to be floor, becuase if we use the root name trick, then we can climb up walls
-		if(collision.gameObject.tag == "Floor")
+		if(collision.gameObject.tag == "Floor" || collision.gameObject.tag == "Wood")
         {
 
 
@@ -67,7 +67,12 @@ public class BallController : MonoBehaviour {
 
 
 			onGround = true;
-			if (!firstCollision) {
+
+
+			// dont do camera shake on first collision
+			if (!firstCollision || collision.gameObject.tag != "Wood") {
+
+				Debug.Log (collision.gameObject.tag.ToString ());
 
 				// using relative velocity, otherwise velocity would be zero, I guess
 				if (collision.relativeVelocity.y > minimumVelocityShake) {

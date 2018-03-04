@@ -45,7 +45,7 @@ public class ArcherController : MonoBehaviour {
 		this.transform.position = initialLocation + towerTop.transform.position;
 		this.transform.rotation = Quaternion.identity;
 
-		Debug.Log (this.gameObject.name + this.transform.position.ToString ());
+		//Debug.Log (this.gameObject.name + this.transform.position.ToString ());
 
 		this.touchedGround = false;
 	
