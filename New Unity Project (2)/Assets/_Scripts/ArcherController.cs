@@ -9,7 +9,7 @@ public class ArcherController : MonoBehaviour {
 	private Archers_CountController countController;
 	public GameObject towerTop;
 
-	void Start() {
+	void Awake() {
 	
 		initialLocation = this.transform.position - towerTop.transform.position;
 
@@ -45,7 +45,7 @@ public class ArcherController : MonoBehaviour {
 		this.transform.position = initialLocation + towerTop.transform.position;
 		this.transform.rotation = Quaternion.identity;
 
-
+		Debug.Log (this.gameObject.name + this.transform.position.ToString ());
 
 		this.touchedGround = false;
 	
