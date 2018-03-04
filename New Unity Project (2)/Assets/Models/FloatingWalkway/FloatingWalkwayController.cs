@@ -21,7 +21,7 @@ public class FloatingWalkwayController : MonoBehaviour {
 	// Update is called once per frame
 	void FixedUpdate () {
 
-		float force = bouyancyForce * (this.transform.position.y - startPos.y);
+		float force = bouyancyForce * (startPos.y - this.transform.position.y);
 
 		if (force < 0) {
 		
@@ -33,12 +33,9 @@ public class FloatingWalkwayController : MonoBehaviour {
 
 		}
 
+		Debug.Log ("Force :" + force);
 
-		platformRB.AddForce(Vector3.up * 
-
-
-
-
+		platformRB.AddForce (Vector3.up * force);
 
 	}
 }
