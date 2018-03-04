@@ -58,7 +58,7 @@ public class BallController : MonoBehaviour {
 
     void OnCollisionEnter(Collision collision) //as long as colliding w obj, not working for now
     {
-		Debug.Log (collision.gameObject.tag.ToString ());
+		//Debug.Log (collision.gameObject.tag.ToString ());
 
 		// We need to tag all objects that are the floor to be floor, becuase if we use the root name trick, then we can climb up walls
 

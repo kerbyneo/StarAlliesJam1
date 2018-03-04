@@ -1563,6 +1563,40 @@ Prefab:
       propertyPath: m_LocalPosition.y
       value: 4.8
       objectReference: {fileID: 0}
+    - target: {fileID: 114389209671990098, guid: de915905f6d5b4380ab3dc3dbe8bb647,
+        type: 2}
+      propertyPath: enableTravel
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 114389209671990098, guid: de915905f6d5b4380ab3dc3dbe8bb647,
+        type: 2}
+      propertyPath: travelTime
+      value: 12
+      objectReference: {fileID: 0}
+    - target: {fileID: 114389209671990098, guid: de915905f6d5b4380ab3dc3dbe8bb647,
+        type: 2}
+      propertyPath: playerForce
+      value: 300
+      objectReference: {fileID: 0}
+    - target: {fileID: 114389209671990098, guid: de915905f6d5b4380ab3dc3dbe8bb647,
+        type: 2}
+      propertyPath: sphereRB
+      value: 
+      objectReference: {fileID: 1972258689}
+    - target: {fileID: 4217343114249660, guid: de915905f6d5b4380ab3dc3dbe8bb647, type: 2}
+      propertyPath: m_LocalPosition.z
+      value: -1.26
+      objectReference: {fileID: 0}
+    - target: {fileID: 1720526239624068, guid: de915905f6d5b4380ab3dc3dbe8bb647, type: 2}
+      propertyPath: m_StaticEditorFlags
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 65449607901078460, guid: de915905f6d5b4380ab3dc3dbe8bb647,
+        type: 2}
+      propertyPath: m_Material
+      value: 
+      objectReference: {fileID: 13400000, guid: fd086c69382a3444dabcfd1ff6e75695,
+        type: 2}
     m_RemovedComponents: []
   m_ParentPrefab: {fileID: 100100000, guid: de915905f6d5b4380ab3dc3dbe8bb647, type: 2}
   m_IsPrefabParent: 0
@@ -2432,7 +2466,8 @@ Prefab:
       propertyPath: m_AngularDrag
       value: 0.2
       objectReference: {fileID: 0}
-    m_RemovedComponents: []
+    m_RemovedComponents:
+    - {fileID: 136339433429309724, guid: c89a923a3c1ee4c3aa2a8a35166e0e3a, type: 2}
   m_ParentPrefab: {fileID: 100100000, guid: c89a923a3c1ee4c3aa2a8a35166e0e3a, type: 2}
   m_IsPrefabParent: 0
 --- !u!43 &739262415
