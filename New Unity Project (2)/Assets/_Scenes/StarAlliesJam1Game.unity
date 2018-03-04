@@ -1571,12 +1571,12 @@ Prefab:
     - target: {fileID: 114389209671990098, guid: de915905f6d5b4380ab3dc3dbe8bb647,
         type: 2}
       propertyPath: travelTime
-      value: 12
+      value: 19
       objectReference: {fileID: 0}
     - target: {fileID: 114389209671990098, guid: de915905f6d5b4380ab3dc3dbe8bb647,
         type: 2}
       propertyPath: playerForce
-      value: 300
+      value: 40
       objectReference: {fileID: 0}
     - target: {fileID: 114389209671990098, guid: de915905f6d5b4380ab3dc3dbe8bb647,
         type: 2}
@@ -1595,8 +1595,13 @@ Prefab:
         type: 2}
       propertyPath: m_Material
       value: 
-      objectReference: {fileID: 13400000, guid: fd086c69382a3444dabcfd1ff6e75695,
+      objectReference: {fileID: 13400000, guid: 06318b576a7b94bbaa6d533360df9987,
         type: 2}
+    - target: {fileID: 54151728287456394, guid: de915905f6d5b4380ab3dc3dbe8bb647,
+        type: 2}
+      propertyPath: m_AngularDrag
+      value: 8
+      objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_ParentPrefab: {fileID: 100100000, guid: de915905f6d5b4380ab3dc3dbe8bb647, type: 2}
   m_IsPrefabParent: 0
