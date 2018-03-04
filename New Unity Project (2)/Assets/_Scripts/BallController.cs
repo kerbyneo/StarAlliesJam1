@@ -33,11 +33,9 @@ public class BallController : MonoBehaviour {
 
 	public Vector3 spawnPos;
 
-	[Header ("Archers")]
-	public GameObject archer1;
-	public GameObject archer2;
-	public GameObject archer3;
 	public GameObject archerCounter;
+
+	public List<GameObject> RESET_OBJECTS = new List<GameObject> ();
 
 
 
@@ -131,13 +129,17 @@ public class BallController : MonoBehaviour {
 		tower.transform.position = spawnPos;
 		tower.transform.rotation = Quaternion.identity;
 
+		if (RESET_OBJECTS == null) {
+		
+			return;
+		
+		}
 
 
+		foreach (GameObject Gobject in RESET_OBJECTS) {
+			Gobject.BroadcastMessage ("Respawn");
 
-		archer1.GetComponent<ArcherController> ().Respawn ();
-		archer2.GetComponent<ArcherController> ().Respawn ();
-		archer3.GetComponent<ArcherController> ().Respawn ();
-		archerCounter.GetComponent<Archers_CountController> ().Respawn ();
+		}
 	
 	}
 }

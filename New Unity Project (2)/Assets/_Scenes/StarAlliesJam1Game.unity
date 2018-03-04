@@ -631,6 +631,14 @@ Prefab:
       propertyPath: m_Drag
       value: 1
       objectReference: {fileID: 0}
+    - target: {fileID: 1946518845900140, guid: de915905f6d5b4380ab3dc3dbe8bb647, type: 2}
+      propertyPath: m_TagString
+      value: Floor
+      objectReference: {fileID: 0}
+    - target: {fileID: 1459848601089040, guid: de915905f6d5b4380ab3dc3dbe8bb647, type: 2}
+      propertyPath: m_Name
+      value: FloatingPlat1
+      objectReference: {fileID: 0}
     m_RemovedComponents:
     - {fileID: 114635318718609418, guid: de915905f6d5b4380ab3dc3dbe8bb647, type: 2}
   m_ParentPrefab: {fileID: 100100000, guid: de915905f6d5b4380ab3dc3dbe8bb647, type: 2}
@@ -5923,6 +5931,10 @@ Prefab:
       propertyPath: m_Name
       value: FloatingWalkway (1)
       objectReference: {fileID: 0}
+    - target: {fileID: 1459848601089040, guid: de915905f6d5b4380ab3dc3dbe8bb647, type: 2}
+      propertyPath: m_Name
+      value: FloatingPlat2
+      objectReference: {fileID: 0}
     m_RemovedComponents:
     - {fileID: 114635318718609418, guid: de915905f6d5b4380ab3dc3dbe8bb647, type: 2}
   m_ParentPrefab: {fileID: 100100000, guid: de915905f6d5b4380ab3dc3dbe8bb647, type: 2}
@@ -6160,6 +6172,13 @@ MonoBehaviour:
   archer2: {fileID: 1975698180}
   archer3: {fileID: 1577397444}
   archerCounter: {fileID: 1800364095}
+  RESET_OBJECTS:
+  - {fileID: 1161346743}
+  - {fileID: 1975698180}
+  - {fileID: 1577397444}
+  - {fileID: 1800364095}
+  - {fileID: 1247684792}
+  - {fileID: 1893740738}
 --- !u!114 &1972258696
 MonoBehaviour:
   m_ObjectHideFlags: 0
