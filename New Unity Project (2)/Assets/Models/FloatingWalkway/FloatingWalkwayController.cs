@@ -63,6 +63,8 @@ public class FloatingWalkwayController : MonoBehaviour {
 				doMovement = false;
 				finishedMovement = true;
 
+				sphereRB.gameObject.transform.parent.parent = null;
+
 				return;
 
 			}
@@ -95,14 +97,18 @@ public class FloatingWalkwayController : MonoBehaviour {
 
 	void LateUpdate() {
 
-		if (!enableTravel) {
+		if (!enableTravel || finishedMovement) {
 			return;
 		}
 
 
 		//Debug.Log ((this.transform.position - sphereRB.transform.position).magnitude);
-		if ((this.transform.position - sphereRB.transform.position).magnitude < 7 && !finishedMovement) {
+		if ((this.transform.position - sphereRB.transform.position).magnitude < 7) {
 
+			sphereRB.gameObject.transform.parent.parent = this.transform.parent;
+
+
+			/*
 			Debug.Log (sphereRB.transform.position.x);
 			Debug.Log (this.transform.position.x + 3.2);
 			if (sphereRB.transform.position.x > this.transform.position.x + 3.5) {
@@ -110,9 +116,16 @@ public class FloatingWalkwayController : MonoBehaviour {
 				//sphereRB.AddTorque (Vector3.back * playerForce);
 
 				Debug.Log ("Force added");
-			}
+			}*/
+		
+		} else {
+		
+		
+			sphereRB.gameObject.transform.parent.parent = null;
+		
 		
 		}
+
 	}
 
 

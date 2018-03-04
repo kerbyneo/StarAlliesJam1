@@ -20,7 +20,7 @@ MonoBehaviour:
   m_ShowMode: 4
   m_Title: 
   m_RootView: {fileID: 2}
-  m_MinSize: {x: 950, y: 300}
+  m_MinSize: {x: 950, y: 492}
   m_MaxSize: {x: 10000, y: 10000}
 --- !u!114 &2
 MonoBehaviour:
@@ -110,7 +110,7 @@ MonoBehaviour:
   m_MinSize: {x: 679, y: 442}
   m_MaxSize: {x: 12006, y: 8042}
   vertical: 0
-  controlID: 104
+  controlID: 86
 --- !u!114 &6
 MonoBehaviour:
   m_ObjectHideFlags: 52
@@ -209,7 +209,7 @@ MonoBehaviour:
   m_MinSize: {x: 204, y: 442}
   m_MaxSize: {x: 4004, y: 8042}
   vertical: 1
-  controlID: 105
+  controlID: 87
 --- !u!114 &10
 MonoBehaviour:
   m_ObjectHideFlags: 52
@@ -253,8 +253,8 @@ MonoBehaviour:
     y: 359
     width: 913
     height: 396
-  m_MinSize: {x: 204, y: 221}
-  m_MaxSize: {x: 4004, y: 4021}
+  m_MinSize: {x: 200, y: 200}
+  m_MaxSize: {x: 4000, y: 4000}
   m_ActualView: {fileID: 17}
   m_Panes:
   - {fileID: 17}
@@ -310,8 +310,8 @@ MonoBehaviour:
   m_DepthBufferBits: 32
   m_Pos:
     serializedVersion: 2
-    x: 234
-    y: 100
+    x: 2
+    y: 19
     width: 909
     height: 338
   m_PersistentViewDataDictionary: {fileID: 0}
@@ -393,10 +393,10 @@ MonoBehaviour:
     height: 336
   m_PersistentViewDataDictionary: {fileID: 0}
   m_TreeViewState:
-    scrollPos: {x: 0, y: 241}
-    m_SelectedIDs: 963e0000
-    m_LastClickedID: 16022
-    m_ExpandedIDs: 20c4ffffbec4ffff00000000823d0000b03d0000923e0000
+    scrollPos: {x: 0, y: 417}
+    m_SelectedIDs: 2e2f0000
+    m_LastClickedID: 12078
+    m_ExpandedIDs: 70faffff00fbffff9efbffff00000000862e0000962f0000
     m_RenameOverlay:
       m_UserAcceptedRename: 0
       m_Name: 
@@ -458,7 +458,7 @@ MonoBehaviour:
     m_ShowAllHits: 0
     m_SearchArea: 0
     m_Folders:
-    - Assets/_Scripts
+    - Assets/Models/FloatingWalkway
   m_ViewMode: 0
   m_StartGridSize: 64
   m_LastFolders: []
@@ -470,7 +470,7 @@ MonoBehaviour:
     scrollPos: {x: 0, y: 0}
     m_SelectedIDs: 70270000
     m_LastClickedID: 10096
-    m_ExpandedIDs: 00000000d83200007e380000b2390000c4390000da390000e6390000163a00001a3a00002c3a00002e3a0000323a00004a3a0000823a0000863a0000a23a0000b03a0000c63a0000223b00003c3b0000403b0000603b0000a83b0000f03b00000a3c0000123c00002a3c0000303c0000443c0000a83c0000d03c0000fe3c0000383d0000d43f0000d63f0000d83f0000da3f0000dc3f0000de3f0000e03f0000e23f0000e43f0000e63f0000e83f0000ea3f0000ec3f0000ee3f0000
+    m_ExpandedIDs: 000000006228000082280000a6280000bc28000006290000142900001c29000030290000322900003629000054290000a2290000a8290000da290000022a0000102a00002a2a0000542a00009c2a0000ea2a0000ee2a0000222b0000a82b0000da2b00002c2c00004a2c00005c2c0000882c0000922c0000b42c0000342d00006c2d0000aa2d0000cc2d0000f82d00000c3400000e34000010340000123400001434000016340000183400001a3400001c3400001e34000020340000223400002434000026340000
     m_RenameOverlay:
       m_UserAcceptedRename: 0
       m_Name: 
@@ -495,24 +495,24 @@ MonoBehaviour:
       m_Icon: {fileID: 0}
       m_ResourceFile: 
   m_AssetTreeState:
-    scrollPos: {x: 0, y: 0}
-    m_SelectedIDs: 06c2ffff
+    scrollPos: {x: 0, y: 162.00165}
+    m_SelectedIDs: de2f0000
     m_LastClickedID: 0
-    m_ExpandedIDs: 00000000d83200007e380000b2390000c4390000da390000e6390000163a00001a3a00001e3a00002c3a00002e3a0000323a00004a3a0000823a0000863a0000a23a0000b03a0000c63a0000e63a0000223b00003c3b0000403b0000603b0000a83b0000f03b00000a3c0000123c00002a3c0000303c0000443c0000a83c0000d03c0000fe3c0000163d0000383d0000d43f0000d63f0000d83f0000da3f0000dc3f0000de3f0000e03f0000e23f0000e43f0000e63f0000e83f0000ea3f0000ec3f0000ee3f0000
+    m_ExpandedIDs: 000000006228000082280000a6280000bc28000006290000142900001c29000030290000322900003629000054290000a2290000a8290000da290000022a0000102a00002a2a0000542a00009c2a0000ea2a0000ee2a0000222b0000a82b0000da2b00002c2c00004a2c00005c2c0000882c0000922c0000b42c0000342d00006c2d0000aa2d0000cc2d0000f82d00000c3400000e34000010340000123400001434000016340000183400001a3400001c3400001e34000020340000223400002434000026340000
     m_RenameOverlay:
       m_UserAcceptedRename: 0
-      m_Name: 
-      m_OriginalName: 
+      m_Name: FloatingWalkwayController
+      m_OriginalName: FloatingWalkwayController
       m_EditFieldRect:
         serializedVersion: 2
         x: 0
         y: 0
         width: 0
         height: 0
-      m_UserData: 0
+      m_UserData: 1974
       m_IsWaitingForDelay: 0
       m_IsRenaming: 0
-      m_OriginalEventType: 11
+      m_OriginalEventType: 0
       m_IsRenamingFilename: 1
       m_ClientGUIView: {fileID: 8}
     m_SearchString: 
@@ -523,8 +523,8 @@ MonoBehaviour:
       m_Icon: {fileID: 0}
       m_ResourceFile: 
   m_ListAreaState:
-    m_SelectedInstanceIDs: 06c2ffff
-    m_LastClickedInstanceID: -15866
+    m_SelectedInstanceIDs: de2f0000
+    m_LastClickedInstanceID: 12254
     m_HadKeyboardFocusLastEvent: 0
     m_ExpandedInstanceIDs: c6230000
     m_RenameOverlay:
@@ -613,9 +613,9 @@ MonoBehaviour:
   m_isRotationLocked: 0
   m_AudioPlay: 0
   m_Position:
-    m_Target: {x: -119.203064, y: -54.884068, z: -1.0832727}
+    m_Target: {x: -248.42783, y: -35.06408, z: -72.463745}
     speed: 2
-    m_Value: {x: -119.203064, y: -54.884068, z: -1.0832727}
+    m_Value: {x: -248.42783, y: -35.06408, z: -72.463745}
   m_RenderMode: 0
   m_ValidateTrueMetals: 0
   m_SceneViewState:
@@ -639,9 +639,9 @@ MonoBehaviour:
       speed: 2
       m_Value: 0
   m_Rotation:
-    m_Target: {x: 0.28217888, y: 0.65494776, z: -0.28946224, w: 0.63845927}
+    m_Target: {x: 0.0052708024, y: -0.9642026, z: 0.26441604, w: 0.019230172}
     speed: 2
-    m_Value: {x: 0.28217888, y: 0.65494776, z: -0.28946224, w: 0.63845927}
+    m_Value: {x: 0.0052708024, y: -0.9642026, z: 0.26441604, w: 0.019230172}
   m_Size:
     m_Target: 94.045815
     speed: 2
@@ -711,7 +711,7 @@ MonoBehaviour:
     width: 293
     height: 734
   m_PersistentViewDataDictionary: {fileID: 0}
-  m_ScrollPosition: {x: 0, y: 496.95508}
+  m_ScrollPosition: {x: 0, y: 65.999756}
   m_InspectorMode: 0
   m_PreviewResizer:
     m_CachedPref: -160
@@ -746,8 +746,7 @@ MonoBehaviour:
   m_PersistentViewDataDictionary: {fileID: 0}
   dragSelectMode: 2
   drawNormals: 0
-  selection:
-  - {fileID: 0}
+  selection: []
 --- !u!114 &21
 MonoBehaviour:
   m_ObjectHideFlags: 52
