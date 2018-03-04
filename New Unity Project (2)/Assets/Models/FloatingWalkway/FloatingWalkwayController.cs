@@ -6,14 +6,23 @@ public class FloatingWalkwayController : MonoBehaviour {
 
 	private Rigidbody platformRB;
 	private Vector3 startPos;
+	private Vector3 parentStartPos;
+
 	private Vector3 startRot;
 
 	public float bouyancyForce;
 	public float maxBouyancyForce;
 
+	public bool doTravel = false;
+	public float travelDist = 44.5f;
+	public float travelTime = 8f;
+
+	private float startTime;
+
 	// Use this for initialization
 	void Start () {
 
+		parentStartPos = this.transform.parent.position;
 		startPos = this.transform.position;
 		startRot = this.transform.rotation.eulerAngles;
 		platformRB = this.GetComponent<Rigidbody> ();
@@ -39,6 +48,16 @@ public class FloatingWalkwayController : MonoBehaviour {
 
 		platformRB.AddForce (Vector3.up * force);
 
+	}
+
+	void OnCollisionStay() {
+	
+		float fracComplete = (Time.time - startTime) / journeyTime;
+		this.transform.parent.position = Vector3.Lerp(parentStartPos,parentStartPos + new Vector3(-1* travelDist, 0,0),
+	
+	
+	
+	
 	}
 
 	void Respawn() {
