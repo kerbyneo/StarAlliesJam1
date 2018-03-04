@@ -104,9 +104,10 @@ public class FloatingWalkwayController : MonoBehaviour {
 		if ((this.transform.position - sphereRB.transform.position).magnitude < 7 && !finishedMovement) {
 
 			Debug.Log (sphereRB.transform.position.x);
-			Debug.Log (this.transform.position.x);
-			if (sphereRB.transform.position.x > this.transform.position.x) {
-				sphereRB.AddForce (Vector3.left * playerForce);
+			Debug.Log (this.transform.position.x + 3.2);
+			if (sphereRB.transform.position.x > this.transform.position.x + 3.5) {
+				sphereRB.AddTorque (Vector3.forward * playerForce);
+				//sphereRB.AddTorque (Vector3.back * playerForce);
 
 				Debug.Log ("Force added");
 			}
@@ -134,6 +135,7 @@ public class FloatingWalkwayController : MonoBehaviour {
 	
 
 		doMovement = false;
+		finishedMovement = false;
 
 		this.transform.parent.position = parentStartPos;
 
