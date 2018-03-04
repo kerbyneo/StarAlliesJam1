@@ -5,10 +5,15 @@ using UnityEngine;
 public class FloatingWalkwayController : MonoBehaviour {
 
 	private Rigidbody platformRB;
+	private Vector3 startPos;
+
+	public float bouyancyForce;
+	public float maxBouyancyForce;
 
 	// Use this for initialization
 	void Start () {
 
+		startPos = this.transform.position;
 		platformRB = this.GetComponent<Rigidbody> ();
 
 	}
@@ -16,7 +21,21 @@ public class FloatingWalkwayController : MonoBehaviour {
 	// Update is called once per frame
 	void FixedUpdate () {
 
-		//platformRB.AddTorque(
+		float force = bouyancyForce * (this.transform.position.y - startPos.y);
+
+		if (force < 0) {
+		
+			force = 0;
+
+		} else if (force > maxBouyancyForce) {
+		
+			force = maxBouyancyForce;
+
+		}
+
+
+		platformRB.AddForce(Vector3.up * 
+
 
 
 
