@@ -5,6 +5,12 @@ using EZCameraShake;
 
 public class BallController : MonoBehaviour {
     
+
+
+
+	public bool DO_INPUT = true;
+
+
 	private Rigidbody ballRB;
 	public GameObject tower;
     private bool onGround;
@@ -13,6 +19,8 @@ public class BallController : MonoBehaviour {
 
 	public float respawnWait = 1.2f;
 	private float timer = 0;
+
+	public float ballTorqueAmount = 42.35f;
 
 	public GameObject overrideSpawn;
 
@@ -100,6 +108,14 @@ public class BallController : MonoBehaviour {
 	
 	// Update is called once per frame
 	void FixedUpdate () {
+
+		if (!DO_INPUT) {
+			return;
+		}
+
+
+
+
 		if (Input.GetKeyDown (KeyCode.Space) && onGround) {
 			//Debug.Log("Jump!");
 			ballRB.AddForce (jumpForce * Vector3.up, ForceMode.Impulse);
@@ -108,6 +124,32 @@ public class BallController : MonoBehaviour {
 
 
 		ballRB.AddForce (Vector3.down * additionalGravity);
+
+
+		// get player input, apply torque relative to the ball
+		if (Input.GetKey (KeyCode.W)) {
+
+			//Debug.Log("Forward Torque Added");
+			ballRB.AddTorque (Vector3.forward * ballTorqueAmount);
+		}
+
+		if (Input.GetKey (KeyCode.D)) {
+			//Debug.Log("Right Torque Added");
+			ballRB.AddTorque (Vector3.right * ballTorqueAmount);
+		}
+
+		if (Input.GetKey (KeyCode.S)) {
+			//Debug.Log("Left Torque Added");
+			ballRB.AddTorque (Vector3.forward * ballTorqueAmount * -1);
+		}
+		if (Input.GetKey (KeyCode.A)) {
+			//Debug.Log("Backward Torque Added");
+			ballRB.AddTorque (Vector3.right * ballTorqueAmount * -1);
+		}
+
+
+
+
 
 
 		if (archerCounter.GetComponent<Archers_CountController> ().archerCount == 0) {
