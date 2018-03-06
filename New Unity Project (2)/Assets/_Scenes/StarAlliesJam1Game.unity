@@ -264,6 +264,7 @@ GameObject:
   - component: {fileID: 12967817}
   - component: {fileID: 12967819}
   - component: {fileID: 12967818}
+  - component: {fileID: 12967820}
   m_Layer: 5
   m_Name: BlackImage
   m_TagString: Untagged
@@ -322,6 +323,17 @@ CanvasRenderer:
   m_PrefabParentObject: {fileID: 0}
   m_PrefabInternal: {fileID: 0}
   m_GameObject: {fileID: 12967816}
+--- !u!114 &12967820
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_PrefabParentObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 0}
+  m_GameObject: {fileID: 12967816}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 90426d947a6074f8fb20568b0eaf07b6, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
 --- !u!1001 &14380855
 Prefab:
   m_ObjectHideFlags: 0

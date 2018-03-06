@@ -5,15 +5,13 @@ using UnityEngine;
 public class VoidController : MonoBehaviour {
 
 
-	public GameObject ballOb;
-
-
+	public GameObject blackFadeOB;
 	
 	void OnTriggerEnter(Collider trigger) {
 
-		if (trigger.gameObject == ballOb) {
+		if (trigger.gameObject.name == "Sphere") {
 		
-			ballOb.GetComponent<BallController> ().RespawnAll ();
+			blackFadeOB.GetComponent<BlackFadeController> ().fadeBlackRespawn ();
 		
 		
 		}

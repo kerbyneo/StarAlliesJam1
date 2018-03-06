@@ -39,6 +39,9 @@ public class BallController : MonoBehaviour {
 	public float fadeInTime = .1f;
 	public float fadeOutTime = 1f;
 
+
+	public BlackFadeController blackFadeOB;
+
 	public Vector3 spawnPos;
 
 	public GameObject archerCounter;
@@ -160,7 +163,7 @@ public class BallController : MonoBehaviour {
 			if (timer < 0) {
 			
 				timer = respawnWait;
-				RespawnAll ();
+				blackFadeOB.GetComponent<BlackFadeController> ().fadeBlackRespawn ();
 			}
 		}
 	}
