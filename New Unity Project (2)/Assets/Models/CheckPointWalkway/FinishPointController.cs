@@ -38,6 +38,9 @@ public class FinishPointController : MonoBehaviour {
 	
 		playerReached = true;
 
+
+
+
 		ballController.DO_INPUT = false;
 	
 	}
