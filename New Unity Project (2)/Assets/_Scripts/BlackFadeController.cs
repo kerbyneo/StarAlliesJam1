@@ -26,12 +26,14 @@ public class BlackFadeController : MonoBehaviour {
 	}
 	
 	public IEnumerator fadeBlackRespawn() {
+
+		Debug.Log ("IEnumerator called");
 	
 		float tempTime = Time.time;
 
 		while (Time.time - tempTime < fadeTime && fadeTime > 0) {
 		
-			imageBlack.color.a = ((Time.time - tempTime) / fadeTime);
+			imageBlack.color = new Color(imageBlack.color.r, imageBlack.color.g, imageBlack.color.b, ((Time.time - tempTime) / fadeTime));
 		
 		
 		}
@@ -42,11 +44,12 @@ public class BlackFadeController : MonoBehaviour {
 
 		while (Time.time - tempTime < fadeTime && fadeTime > 0) {
 
-			imageBlack.color.a = (1 - ((Time.time - tempTime) / fadeTime));
+			imageBlack.color = new Color(imageBlack.color.r, imageBlack.color.g, imageBlack.color.b, 1 - ((Time.time - tempTime) / fadeTime));
 
 
 		}
-	
+
+		yield return null;
 	
 	
 	}

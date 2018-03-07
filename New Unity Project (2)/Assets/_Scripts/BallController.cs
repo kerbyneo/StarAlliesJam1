@@ -163,7 +163,7 @@ public class BallController : MonoBehaviour {
 			if (timer < 0) {
 			
 				timer = respawnWait;
-				blackFadeOB.GetComponent<BlackFadeController> ().fadeBlackRespawn ();
+				StartCoroutine(blackFadeOB.GetComponent<BlackFadeController> ().fadeBlackRespawn ());
 			}
 		}
 	}

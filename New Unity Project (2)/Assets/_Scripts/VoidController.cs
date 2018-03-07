@@ -11,7 +11,7 @@ public class VoidController : MonoBehaviour {
 
 		if (trigger.gameObject.name == "Sphere") {
 		
-			blackFadeOB.GetComponent<BlackFadeController> ().fadeBlackRespawn ();
+			StartCoroutine(blackFadeOB.GetComponent<BlackFadeController> ().fadeBlackRespawn ());
 		
 		
 		}
