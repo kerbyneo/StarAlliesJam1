@@ -35,6 +35,7 @@ public class BallController : MonoBehaviour {
 
 	[Header ("Jump Camera Shake Amounts")]
 	public float magnitude = 1f;
+	public float magnitudeExponent = 2f;
 	public float roughness = 1f;
 	public float fadeInTime = .1f;
 	public float fadeOutTime = 1f;
@@ -97,8 +98,18 @@ public class BallController : MonoBehaviour {
 				//Debug.Log ("Shook camera");
 
 				// using relative velocity, otherwise velocity would be zero, I guess
+
+
+
+
+
 				if (collision.relativeVelocity.y > minimumVelocityShake) {
-					CameraShaker.Instance.ShakeOnce (Mathf.Abs((collision.relativeVelocity.y > maximumVelocityShake? maximumVelocityShake:collision.relativeVelocity.y) * magnitude), roughness, fadeInTime, fadeOutTime);
+
+					float calculatedMagnitude = Mathf.Pow (((collision.relativeVelocity.y > maximumVelocityShake ? maximumVelocityShake : collision.relativeVelocity.y) * magnitude), magnitudeExponent);
+
+					Debug.Log(calculatedMagnitude);
+
+					CameraShaker.Instance.ShakeOnce (calculatedMagnitude, roughness, fadeInTime, fadeOutTime);
 				}
 			
 			} else {

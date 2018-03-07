@@ -9451,7 +9451,7 @@ MeshCollider:
   m_CookingOptions: 14
   m_SkinWidth: 0.01
   m_Mesh: {fileID: 4300000, guid: 8a2ecdc9357d87d429af6f58cafb5839, type: 3}
---- !u!43 &1155869500
+--- !u!43 &1145917625
 Mesh:
   m_ObjectHideFlags: 0
   m_PrefabParentObject: {fileID: 0}
@@ -13199,8 +13199,9 @@ MonoBehaviour:
   overrideSpawn: {fileID: 0}
   additionalGravity: 40
   minimumVelocityShake: 0.5
-  maximumVelocityShake: 3.5
-  magnitude: 2.1
+  maximumVelocityShake: 4.5
+  magnitude: 0.8
+  magnitudeExponent: 2
   roughness: 0.76
   fadeInTime: 0
   fadeOutTime: 0.3
