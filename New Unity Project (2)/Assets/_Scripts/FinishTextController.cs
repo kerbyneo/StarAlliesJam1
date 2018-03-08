@@ -5,12 +5,23 @@ using UnityEngine.UI;
 
 public class FinishTextController : MonoBehaviour {
 
+	// time count
+	public Text timeCount;
+
+
+	// finish texts
+	public List<Text> finishTexts = new List<Text> ();
 
 	public Text winText;
 	public Text timeText;
-	public Text timeCount;
+
 	public Text restartText;
 	public Button restartButton;
+
+	// gameplay text
+	public List<Text> gameplayTexts = new List<Text> ();
+
+
 
 	public GameObject ballOB;
 
@@ -19,20 +30,38 @@ public class FinishTextController : MonoBehaviour {
 
 		timeCount.text = (Time.time - ballOB.GetComponent<BallController>().timeStart).ToString ();
 
-		winText.gameObject.SetActive (true);
-		timeText.gameObject.SetActive (true);
-		timeCount.gameObject.SetActive (true);
-		restartText.gameObject.SetActive (true);
+		// show the finish ui
+		foreach (Text text in finishTexts) {
+		
+			text.gameObject.SetActive (true);
+		
+		}
+
+		// hide the gameplay ui
+		foreach (Text text in gameplayTexts) {
+
+			text.gameObject.SetActive (false);
+
+		}
 	
 	}
 
 
 	public void hideFinish() {
 
-		winText.gameObject.SetActive (false);
-		timeText.gameObject.SetActive (false);
-		timeCount.gameObject.SetActive (false);
-		restartText.gameObject.SetActive (false);
+		// hide the finish ui
+		foreach (Text text in finishTexts) {
+
+			text.gameObject.SetActive (false);
+
+		}
+
+		// show the gameplay ui
+		foreach (Text text in gameplayTexts) {
+
+			text.gameObject.SetActive (true);
+
+		}
 
 
 		ballOB.GetComponent<BallController> ().restartGame ();

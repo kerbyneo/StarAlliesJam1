@@ -89,7 +89,7 @@ public class BallController : MonoBehaviour {
 
 		// edge case if the user puts in new spawn for testing
 		if (overrideSpawn != null)  {
-			Debug.Log ("spawn overridden");
+			Debug.Log ("Spawn Overridden");
 			overrideSpawn.GetComponent<CheckPointController> ().capturePoint();
 			this.RespawnAll ();
 		}
@@ -107,11 +107,8 @@ public class BallController : MonoBehaviour {
 			onGround = true;
             source.PlayOneShot(thudSound, 1F);
 		
-		}
-
-
-
-		if(collision.gameObject.tag == "Floor")
+		} 
+		else if(collision.gameObject.tag == "Floor")
 		{
 			//Debug.Log("Collision: " + collision.relativeVelocity.y);
 

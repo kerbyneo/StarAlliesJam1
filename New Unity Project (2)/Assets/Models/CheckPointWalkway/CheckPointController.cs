@@ -55,6 +55,8 @@ public class CheckPointController : MonoBehaviour {
 
 		ballController.spawnPos = this.transform.position + CheckpointOffset;
 
+		Debug.Log (ballController.spawnPos);
+
 		//Debug.Log ("Spawn set: " + ballController.spawnPos);
 
 		flag1.GetComponent <Renderer>().material = capturedFlag;

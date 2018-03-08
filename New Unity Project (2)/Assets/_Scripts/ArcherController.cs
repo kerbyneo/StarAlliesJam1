@@ -23,19 +23,15 @@ public class ArcherController : MonoBehaviour {
 	// check if touched something under world
 	void Update() {
 
-
-
-		if (this.touchedGround) {
+		if (touchedGround) {
 			return;
-            source.PlayOneShot(screamSound, 1F);
         }
-
 
 		//Debug.Log (collision.gameObject.transform.root.gameObject.name.ToString());
 		if ((towerTop.transform.position - this.transform.position).magnitude > 1.8) {
 		
 			countController.archerCount--;
-			this.touchedGround = true;
+			touchedGround = true;
             source.PlayOneShot(screamSound, 1F);
         }
 	}
@@ -51,7 +47,7 @@ public class ArcherController : MonoBehaviour {
 
 		//Debug.Log (this.gameObject.name + this.transform.position.ToString ());
 
-		this.touchedGround = false;
+		touchedGround = false;
 	
 	
 	}
