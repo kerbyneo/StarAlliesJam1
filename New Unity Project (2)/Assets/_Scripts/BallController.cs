@@ -11,6 +11,8 @@ public class BallController : MonoBehaviour {
 
 	public bool DO_INPUT = true;
 
+	public bool hasInputted = false;
+
 
 	private Rigidbody ballRB;
 	public GameObject tower;
@@ -61,6 +63,7 @@ public class BallController : MonoBehaviour {
 		DO_INPUT = true;
 		timer = respawnWait;
 
+		hasInputted = false;
 
 		timeStart = Time.time;
 
@@ -148,6 +151,13 @@ public class BallController : MonoBehaviour {
 	// Update is called once per frame
 	void FixedUpdate () {
 
+
+		if (!hasInputted) {
+		
+			timeStart = Time.time;
+		
+		}
+
 		if (!DO_INPUT) {
 			return;
 		}
@@ -157,6 +167,8 @@ public class BallController : MonoBehaviour {
 
 		if (Input.GetKeyDown (KeyCode.Space) && onGround) {
 			//Debug.Log("Jump!");
+			hasInputted = true;
+
 			ballRB.AddForce (jumpForce * Vector3.up, ForceMode.Impulse);
 			onGround = false;
 		}
@@ -167,21 +179,28 @@ public class BallController : MonoBehaviour {
 
 		// get player input, apply torque relative to the ball
 		if (Input.GetKey (KeyCode.W)) {
+			hasInputted = true;
 
 			//Debug.Log("Forward Torque Added");
 			ballRB.AddTorque (Vector3.forward * ballTorqueAmount);
 		}
 
 		if (Input.GetKey (KeyCode.D)) {
+			hasInputted = true;
+
 			//Debug.Log("Right Torque Added");
 			ballRB.AddTorque (Vector3.right * ballTorqueAmount);
 		}
 
 		if (Input.GetKey (KeyCode.S)) {
+			hasInputted = true;
+
 			//Debug.Log("Left Torque Added");
 			ballRB.AddTorque (Vector3.forward * ballTorqueAmount * -1);
 		}
 		if (Input.GetKey (KeyCode.A)) {
+			hasInputted = true;
+
 			//Debug.Log("Backward Torque Added");
 			ballRB.AddTorque (Vector3.right * ballTorqueAmount * -1);
 		}

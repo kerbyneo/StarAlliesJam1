@@ -10,8 +10,9 @@ public class FinishPointController : MonoBehaviour {
 	[Header ("Player Ball Object")]
 	public GameObject ballObject;
 
-	BallController ballController;
+	private BallController ballController;
 
+	public GameObject finishText;
 
 	// Use this for initialization
 	void Awake () {
@@ -38,10 +39,9 @@ public class FinishPointController : MonoBehaviour {
 	
 		playerReached = true;
 
-
-
-
 		ballController.DO_INPUT = false;
+
+		finishText.GetComponent<FinishTextController> ().showFinish ();
 	
 	}
 		

@@ -18,7 +18,16 @@ public class Time_CountController : MonoBehaviour {
 	// Update is called once per frame
 	void Update () {
 
-		timeCount.text = (Time.time - ballOB.GetComponent<BallController>().timeStart).ToString ();
+		float tempTime = (Time.time - ballOB.GetComponent<BallController> ().timeStart);
+
+
+		if (!ballOB.GetComponent<BallController> ().hasInputted) {
+		
+			tempTime = 0;
+		
+		}
+
+		timeCount.text = tempTime.ToString ("0.00");
 
 	}
 }
