@@ -4,9 +4,10 @@ using UnityEngine;
 using EZCameraShake;
 
 public class BallController : MonoBehaviour {
-    
 
 
+    private AudioSource source;
+    public AudioClip thudSound;
 
 	public bool DO_INPUT = true;
 
@@ -81,6 +82,8 @@ public class BallController : MonoBehaviour {
         ballRB = this.GetComponent<Rigidbody>(); //gets rigidbody
 		spawnPos = this.transform.position;
 
+        source = GetComponent<AudioSource>();
+
 
 		timeStart = Time.time;
 
@@ -102,7 +105,7 @@ public class BallController : MonoBehaviour {
 		if (collision.gameObject.tag == "Wood") {
 		
 			onGround = true;
-		
+            source.PlayOneShot(thudSound, 1F);
 		
 		}
 
@@ -114,9 +117,10 @@ public class BallController : MonoBehaviour {
 
 
 			onGround = true;
+            source.PlayOneShot(thudSound, 1F);
 
-			// dont do camera shake on first collision
-			if (!firstCollision) {
+            // dont do camera shake on first collision
+            if (!firstCollision) {
 
 
 				//Debug.Log ("Shook camera");

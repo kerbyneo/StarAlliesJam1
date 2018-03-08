@@ -8,12 +8,16 @@ public class ArcherController : MonoBehaviour {
 	private bool touchedGround = false;
 	private Archers_CountController countController;
 	public GameObject towerTop;
+    private AudioSource source;
+    public AudioClip screamSound;
 
 	void Awake() {
 	
 		initialLocation = this.transform.position - towerTop.transform.position;
 
 		countController = GameObject.Find ("Archers_Count").GetComponent<Archers_CountController> ();
+
+        source = GetComponent<AudioSource>();
 	}
 	
 	// check if touched something under world
@@ -21,10 +25,10 @@ public class ArcherController : MonoBehaviour {
 
 
 
-
 		if (this.touchedGround) {
 			return;
-		}
+            source.PlayOneShot(screamSound, 1F);
+        }
 
 
 		//Debug.Log (collision.gameObject.transform.root.gameObject.name.ToString());
@@ -32,8 +36,8 @@ public class ArcherController : MonoBehaviour {
 		
 			countController.archerCount--;
 			this.touchedGround = true;
-		
-		}
+            source.PlayOneShot(screamSound, 1F);
+        }
 	}
 
 	public void Respawn() {
