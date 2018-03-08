@@ -16,6 +16,8 @@ public class BallController : MonoBehaviour {
     private bool onGround;
     public float jumpForce = 1.0f;
 	private bool firstCollision = true;
+	private Vector3 origionalSpawn;
+
 
 	public float respawnWait = 1.2f;
 	private float timer = 0;
@@ -40,6 +42,8 @@ public class BallController : MonoBehaviour {
 	public float fadeInTime = .1f;
 	public float fadeOutTime = 1f;
 
+	public float timeStart;
+
 
 	public BlackFadeController blackFadeOB;
 
@@ -50,6 +54,25 @@ public class BallController : MonoBehaviour {
 	public List<GameObject> RESET_OBJECTS = new List<GameObject> ();
 
 
+	public void restartGame() {
+	
+		spawnPos = origionalSpawn;
+		DO_INPUT = true;
+		timer = respawnWait;
+
+
+		timeStart = Time.time;
+
+
+	}
+
+
+
+	void Awake () {
+	
+		origionalSpawn = this.transform.position;
+	
+	}
 
     // Use this for initialization
     void Start ()
@@ -59,10 +82,11 @@ public class BallController : MonoBehaviour {
 		spawnPos = this.transform.position;
 
 
+		timeStart = Time.time;
+
+		// edge case if the user puts in new spawn for testing
 		if (overrideSpawn != null)  {
-
 			Debug.Log ("spawn overridden");
-
 			overrideSpawn.GetComponent<CheckPointController> ().capturePoint();
 			this.RespawnAll ();
 		}
