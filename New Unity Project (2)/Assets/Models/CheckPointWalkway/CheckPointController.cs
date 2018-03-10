@@ -63,6 +63,14 @@ public class CheckPointController : MonoBehaviour {
 		flag2.GetComponent <Renderer>().material = capturedFlag;
 	
 	}
+
+	public void resetFlag() {
+		
+		flag1.GetComponent <Renderer>().material = uncapturedFlag;
+		flag2.GetComponent <Renderer>().material = uncapturedFlag;
+	
+	
+	}
 		
 
 }

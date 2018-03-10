@@ -12,23 +12,23 @@ public class FinishTextController : MonoBehaviour {
 	// finish texts
 	public List<Text> finishTexts = new List<Text> ();
 
-	public Text winText;
-	public Text timeText;
-
-	public Text restartText;
-	public Button restartButton;
-
 	// gameplay text
 	public List<Text> gameplayTexts = new List<Text> ();
+
+	// start menu text
+	public List<Text> startTexts = new List<Text> ();
+
 
 
 
 	public GameObject ballOB;
 
 
-	public void showFinish() {
+	public void showFinishUI() {
 
-		timeCount.text = (Time.time - ballOB.GetComponent<BallController>().timeStart).ToString ();
+		Debug.Log ("Show finish");
+
+		timeCount.text = (Time.time - ballOB.GetComponent<BallController>().timeStart).ToString ("0.00");
 
 		// show the finish ui
 		foreach (Text text in finishTexts) {
@@ -47,7 +47,7 @@ public class FinishTextController : MonoBehaviour {
 	}
 
 
-	public void hideFinish() {
+	public void hideFinishUI() {
 
 		// hide the finish ui
 		foreach (Text text in finishTexts) {
@@ -56,7 +56,26 @@ public class FinishTextController : MonoBehaviour {
 
 		}
 
-		// show the gameplay ui
+		ballOB.GetComponent<BallController> ().restartGame ();
+
+	}
+
+
+	public void hideStartUI() {
+	
+		// hide the start ui
+		foreach (Text text in startTexts) {
+
+			text.gameObject.SetActive (false);
+
+		}
+
+
+	}
+
+	public void showGameUI() {
+
+		// show the game ui
 		foreach (Text text in gameplayTexts) {
 
 			text.gameObject.SetActive (true);
@@ -64,14 +83,13 @@ public class FinishTextController : MonoBehaviour {
 		}
 
 
-		ballOB.GetComponent<BallController> ().restartGame ();
-
 	}
 
+	public void restartButtonClicked() {
 
-	public void ButtonClicked() {
+		Debug.Log ("Restart Button Pressed");
 
-		hideFinish ();
+		hideFinishUI ();
 	
 	}
 }

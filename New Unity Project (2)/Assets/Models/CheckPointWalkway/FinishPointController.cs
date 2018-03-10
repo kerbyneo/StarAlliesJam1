@@ -41,7 +41,9 @@ public class FinishPointController : MonoBehaviour {
 
 		ballController.DO_INPUT = false;
 
-		finishText.GetComponent<FinishTextController> ().showFinish ();
+		finishText.GetComponent<FinishTextController> ().showFinishUI ();
+
+		ballController.angularFrictionState (true);
 	
 	}
 		

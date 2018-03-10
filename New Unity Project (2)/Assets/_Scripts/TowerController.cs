@@ -16,7 +16,6 @@ public class TowerController : MonoBehaviour {
 	public float ForceHeight;
 
 
-
 	// Use this for initialization
 	void Start () {
 
@@ -29,6 +28,8 @@ public class TowerController : MonoBehaviour {
 	
 	// Update is called once per frame
 	void FixedUpdate () {
+
+
 		
 		// draw a line to the center of mass
 		//Debug.DrawLine (Vector3.zero, towerRB.worldCenterOfMass);

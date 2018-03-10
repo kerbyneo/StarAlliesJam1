@@ -6,16 +6,16 @@ public class ArcherController : MonoBehaviour {
 
 	private Vector3 initialLocation;
 	private bool touchedGround = false;
-	private Archers_CountController countController;
+	public Archers_CountController countController;
 	public GameObject towerTop;
     private AudioSource source;
     public AudioClip screamSound;
 
+	public GameObject ballOB;
+
 	void Awake() {
 	
 		initialLocation = this.transform.position - towerTop.transform.position;
-
-		countController = GameObject.Find ("Archers_Count").GetComponent<Archers_CountController> ();
 
         source = GetComponent<AudioSource>();
 	}
@@ -32,7 +32,9 @@ public class ArcherController : MonoBehaviour {
 		
 			countController.archerCount--;
 			touchedGround = true;
-            source.PlayOneShot(screamSound, 1F);
+
+			if (ballOB.GetComponent<BallController>().playMusic)
+            	source.PlayOneShot(screamSound, .8F);
         }
 	}
 

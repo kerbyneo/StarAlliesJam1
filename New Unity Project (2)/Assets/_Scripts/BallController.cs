@@ -6,10 +6,12 @@ using EZCameraShake;
 public class BallController : MonoBehaviour {
 
 
+	public bool playMusic = true;
+
     private AudioSource source;
     public AudioClip thudSound;
 
-	public bool DO_INPUT = true;
+	public bool DO_INPUT = false;
 
 	public bool hasInputted = false;
 
@@ -20,6 +22,9 @@ public class BallController : MonoBehaviour {
     public float jumpForce = 1.0f;
 	private bool firstCollision = true;
 	private Vector3 origionalSpawn;
+
+	public float finishLineFriction = 3f;
+	private float startingFriction;
 
 
 	public float respawnWait = 1.2f;
@@ -50,23 +55,42 @@ public class BallController : MonoBehaviour {
 
 	public BlackFadeController blackFadeOB;
 
+	public GameObject finishText;
+
 	public Vector3 spawnPos;
 
 	public GameObject archerCounter;
 
 	public List<GameObject> RESET_OBJECTS = new List<GameObject> ();
 
+	public List<GameObject> RESET_CHECKPOINTS = new List<GameObject>();
+
 
 	public void restartGame() {
+
+		Debug.Log ("Restart Called");
 	
 		spawnPos = origionalSpawn;
-		DO_INPUT = true;
+
 		timer = respawnWait;
 
-		hasInputted = false;
+		foreach (GameObject checkpoint in RESET_CHECKPOINTS) {
+		
+			checkpoint.GetComponent<CheckPointController> ().resetFlag ();
+		
+		}
+
+		StartCoroutine(blackFadeOB.GetComponent<BlackFadeController> ().fadeBlackRespawn ());
+
+		angularFrictionState (false);
 
 		timeStart = Time.time;
 
+		hasInputted = false;
+
+		finishText.GetComponent<FinishTextController> ().showGameUI ();
+
+		DO_INPUT = true;
 
 	}
 
@@ -74,6 +98,7 @@ public class BallController : MonoBehaviour {
 
 	void Awake () {
 	
+		DO_INPUT = false;
 		origionalSpawn = this.transform.position;
 	
 	}
@@ -82,9 +107,12 @@ public class BallController : MonoBehaviour {
     void Start ()
     {
 		timer = respawnWait;
+
         ballRB = this.GetComponent<Rigidbody>(); //gets rigidbody
 		spawnPos = this.transform.position;
 
+
+		startingFriction = ballRB.angularDrag;
         source = GetComponent<AudioSource>();
 
 
@@ -108,7 +136,9 @@ public class BallController : MonoBehaviour {
 		if (collision.gameObject.tag == "Wood") {
 		
 			onGround = true;
-            source.PlayOneShot(thudSound, 1F);
+
+			if (playMusic)
+            	source.PlayOneShot(thudSound, 1F);
 		
 		} 
 		else if(collision.gameObject.tag == "Floor")
@@ -117,7 +147,8 @@ public class BallController : MonoBehaviour {
 
 
 			onGround = true;
-            source.PlayOneShot(thudSound, 1F);
+
+
 
             // dont do camera shake on first collision
             if (!firstCollision) {
@@ -134,6 +165,10 @@ public class BallController : MonoBehaviour {
 				if (collision.relativeVelocity.y > minimumVelocityShake) {
 
 					float calculatedMagnitude = Mathf.Pow (((collision.relativeVelocity.y > maximumVelocityShake ? maximumVelocityShake : collision.relativeVelocity.y) * magnitude), magnitudeExponent);
+
+					if (playMusic && !firstCollision)
+						source.PlayOneShot(thudSound, calculatedMagnitude / Mathf.Pow (maximumVelocityShake * magnitude, magnitudeExponent));
+
 
 					Debug.Log(calculatedMagnitude);
 
@@ -257,5 +292,17 @@ public class BallController : MonoBehaviour {
 
 		}
 	
+	}
+
+	public void angularFrictionState (bool moreFriction) {
+
+		if (moreFriction) {
+			ballRB.angularDrag = finishLineFriction;
+		} else {
+
+			ballRB.angularDrag = startingFriction;
+		}
+
+
 	}
 }
