@@ -72,8 +72,6 @@ public class BallController : MonoBehaviour {
 	
 		spawnPos = origionalSpawn;
 
-		timer = respawnWait;
-
 		foreach (GameObject checkpoint in RESET_CHECKPOINTS) {
 		
 			checkpoint.GetComponent<CheckPointController> ().resetFlag ();
@@ -106,7 +104,6 @@ public class BallController : MonoBehaviour {
     // Use this for initialization
     void Start ()
     {
-		timer = respawnWait;
 
         ballRB = this.GetComponent<Rigidbody>(); //gets rigidbody
 		spawnPos = this.transform.position;
@@ -122,7 +119,11 @@ public class BallController : MonoBehaviour {
 		if (overrideSpawn != null)  {
 			Debug.Log ("Spawn Overridden");
 			overrideSpawn.GetComponent<CheckPointController> ().capturePoint();
-			this.RespawnAll ();
+
+			finishText.GetComponent<FinishTextController> ().hideFinishUI (false);
+
+			RespawnAll ();
+
 		}
 	}
 
@@ -249,21 +250,23 @@ public class BallController : MonoBehaviour {
 			
 			timer -= Time.deltaTime;
 
+			this.gameObject.transform.parent.parent = null;
 
 			if (timer < 0) {
 			
 				timer = respawnWait;
-				StartCoroutine(blackFadeOB.GetComponent<BlackFadeController> ().fadeBlackRespawn ());
+				StartCoroutine (blackFadeOB.GetComponent<BlackFadeController> ().fadeBlackRespawn ());
 			}
+		} else {
+		
+			timer = respawnWait;
+		
 		}
 	}
 
 
 
 	public void RespawnAll() {
-	
-
-		timer = respawnWait;
 
 		ballRB.velocity = Vector3.zero;
 		ballRB.angularVelocity = Vector3.zero;
@@ -281,9 +284,7 @@ public class BallController : MonoBehaviour {
 		tower.transform.rotation = Quaternion.identity;
 
 		if (RESET_OBJECTS == null) {
-		
 			return;
-		
 		}
 
 

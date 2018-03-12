@@ -132,10 +132,7 @@ public class CameraController : MonoBehaviour {
 		
 			Debug.Log ((this.transform.position - targetLocation).magnitude + " " + yOffset.ToString());
 
-			targetLocation = towerGO.transform.position + cameraPositionOffset + new Vector3(0,yOffset, 0);
-
-			if (yOffset > 0)
-				yOffset -= .06f;
+			targetLocation = towerGO.transform.position + cameraPositionOffset + new Vector3(0,0, 0);
 
 			fracComplete = (Time.time - startTime) / tempFlySpeed;
 			this.transform.position = Vector3.Lerp (this.transform.position, targetLocation, fracComplete);

@@ -48,6 +48,13 @@ public class FinishTextController : MonoBehaviour {
 
 
 	public void hideFinishUI() {
+	
+		hideFinishUI (true);
+	
+	}
+
+
+	public void hideFinishUI(bool doRestart) {
 
 		// hide the finish ui
 		foreach (Text text in finishTexts) {
@@ -56,7 +63,8 @@ public class FinishTextController : MonoBehaviour {
 
 		}
 
-		ballOB.GetComponent<BallController> ().restartGame ();
+		if (doRestart)
+			ballOB.GetComponent<BallController> ().restartGame ();
 
 	}
 
